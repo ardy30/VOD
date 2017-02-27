@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/album_width"
+                android:clickable="true"
+                android:paddingBottom="@dimen/voiceplaylist_item_padding"
+                android:paddingRight="@dimen/voiceplaylist_item_padding"
+    >
+
+    <RelativeLayout
+        android:id="@+id/voiceplay_item_root"
+        android:layout_width="@dimen/voice_item_width"
+        android:layout_height="@dimen/album_width"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <ImageView
+            android:id="@+id/voiceplay_img"
+            android:layout_width="@dimen/voice_item_width"
+            android:layout_height="@dimen/album_width"
+            android:scaleType="fitXY"/>
+
+        <com.ppfuns.ui.view.AlwaysMarqueeTextView
+            android:id="@+id/voiceplay_videoname"
+            android:layout_width="@dimen/voice_item_width"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+
+            android:ellipsize="marquee"
+            android:gravity="bottom"
+            android:paddingBottom="@dimen/filmeName_paddingbottom"
+            android:paddingLeft="@dimen/filmeName_paddingleft"
+            android:paddingRight="@dimen/filmeName_paddingright"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="#ffffff"
+            android:textSize="@dimen/album_textsize"/>
+
+        <View
+            android:layout_width="@dimen/voice_item_width"
+            android:layout_height="@dimen/voice_item_mas_height"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/mas3"
+            />
+    </RelativeLayout>
+</RelativeLayout>
+
+

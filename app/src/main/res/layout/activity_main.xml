@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--paddingLest and paddingRight-->
+
+<LinearLayout
+    android:id="@+id/content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+
+    tools:context=".activity.MainActivity">
+
+    <!--layout_marginTop-->
+
+
+    <!--标题位-->
+    <include
+        android:id="@+id/main_title"
+        layout="@layout/main_title"/>
+
+    <!--layout_marginButton and layout_marginTop-->
+    <include
+        android:id="@+id/main_content"
+        layout="@layout/main_content"
+
+        />
+
+</LinearLayout>

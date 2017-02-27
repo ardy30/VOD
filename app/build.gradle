@@ -1,0 +1,100 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+
+//获取当前编译时间
+def releaseTime() {
+    def time = new Date().format("yyyyMMdd", TimeZone.getTimeZone("GMT+08:00"))
+    println time
+    return time
+}
+
+//获取svn版本号
+def getSvnVersion(){
+    def int verCode = 0
+    def versionPropsFile = file("src/main/assets/user_config.properties")
+    if (versionPropsFile.canRead()) {
+
+        Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionPropsFile))
+
+        verCode = versionProps['svn_version'].toInteger()
+    }
+
+    return verCode
+}
+
+def getVerName() {
+    def int svnVersion = getSvnVersion()
+    if (svnVersion == 0){
+        return "内部开发版本"
+    } else {
+        return svnVersion
+    }
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    defaultConfig {
+        applicationId "com.ppfuns.vod"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode getSvnVersion()
+        versionName "1.0"+"."+getVerName()+"."+releaseTime()
+    }
+    signingConfigs {
+        releaseConfig {
+            keyAlias 'android.keystore'
+            keyPassword 'ppfuns123'
+            storeFile file('/home/autobuild/zb/android.keystore')
+            storePassword 'ppfuns123'
+        }
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.releaseConfig
+        }
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def oldFile = output.outputFile
+            if (variant.buildType.name.equals('release')) {
+                def releaseApkName = defaultConfig.applicationId + '_release_' + defaultConfig.versionName + '.apk'
+                output.outputFile = new File(oldFile.parent, releaseApkName)
+            }
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.zhy:okhttputils:2.6.1'
+    compile 'com.jakewharton:butterknife:8.1.0'
+    apt 'com.jakewharton:butterknife-compiler:8.1.0'
+    compile 'com.jakewharton:disklrucache:2.0.2'
+    compile 'com.android.support:recyclerview-v7:23.4.0'
+    compile 'it.sephiroth.android.library.picasso:picasso:2.5.2.4b'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.umeng.analytics:analytics:5.6.7'
+    compile project(':vrlibrary')
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile files('libs/jcc-bate-0.7.3.jar')
+}

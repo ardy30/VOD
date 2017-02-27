@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 全键盘-26-字母 -->
+<Keyboard
+
+    key_height="@dimen/number_key_size"
+    key_left_padding="@dimen/number_key_left_padding"
+    key_select_res="@drawable/key_search_focus"
+    key_text_color="#88ffffff"
+    key_text_size="@dimen/search_keyborad_numberSize"
+    key_top_padding="@dimen/number_key_top_padding"
+    key_width="@dimen/number_key_size"
+    left_right_move="false"
+    start_pos_x="0px"
+    start_pos_y="200px"
+    top_bottom_move="false">
+
+    <!-- 第一行 -->
+    <row>
+        <keys
+            codes="49|50|51"
+            labels="1|2|3"
+            splitter="|"/>
+
+    </row>
+    <!-- 第二行 -->
+    <row>
+        <keys
+            codes="52|53|54"
+            labels="4|5|6"
+            splitter="|"/>
+
+    </row>
+    <!-- 第三行 -->
+    <row>
+        <keys
+            codes="55|56|57"
+            labels="7|8|9"
+            splitter="|"/>
+
+    </row>
+    <!-- 第四行 -->
+    <row>
+        <keys
+            codes="48"
+            key_left_padding="@dimen/number0_left_padding"
+            labels="0"
+            splitter="|"/>
+
+    </row>
+
+
+</Keyboard>

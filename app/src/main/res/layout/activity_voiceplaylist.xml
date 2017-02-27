@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/voiceplaylist_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/search_keyboard_title_mleft"
+        android:layout_marginTop="@dimen/search_keyboard_title_mtop"
+        android:background="#000000"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:includeFontPadding="false"
+        android:text="@string/voice_title"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/search_keyboard_title_textSize"/>
+
+    <com.ppfuns.ui.view.RecyclerViewTV
+        android:id="@+id/voiceplaylist_datas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/voiceplaylist_title"
+        android:layout_marginLeft="@dimen/search_gird_poster_mleft"
+        android:layout_marginRight="@dimen/search_gird_poster_mright"
+        android:layout_marginTop="@dimen/search_gird_poster_mtop"
+
+        />
+
+    <com.ppfuns.ui.view.MainUpView
+        android:id="@+id/voiceplaylist_mainupview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

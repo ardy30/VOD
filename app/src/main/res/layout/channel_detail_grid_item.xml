@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/img_layout"
+                android:layout_width="@dimen/album_width"
+                android:layout_height="@dimen/album_height"
+                android:gravity="center">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="@dimen/album_width"
+        android:layout_height="@dimen/album_height"
+        android:scaleType="fitXY"
+        android:src="@drawable/exy"/>
+    <!--
+    <com.ppfuns.ui.view.LabelView
+        xmlns:lv="http://schemas.android.com/apk/res-auto"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        lv:lv_background_color="#3F9FE0"
+        lv:lv_fill_triangle="true"
+        lv:lv_gravity="TOP_LEFT"
+        lv:lv_text="热门"
+        lv:lv_text_size="14sp"
+        android:id="@+id/tips"/>-->
+    <ImageView
+        android:id="@+id/img_tip"
+        android:layout_width="@dimen/img_tip_width"
+        android:layout_height="@dimen/img_tip_width"
+        android:scaleType="fitXY"
+        android:src="@drawable/hd"/>
+
+    <com.ppfuns.ui.view.AlwaysMarqueeTextView
+        android:id="@+id/filmeName"
+        android:layout_width="@dimen/album_width"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/mas3"
+        android:ellipsize="marquee"
+        android:gravity="bottom"
+        android:paddingBottom="@dimen/filmeName_paddingbottom"
+        android:paddingLeft="@dimen/filmeName_paddingleft"
+        android:paddingRight="@dimen/filmeName_paddingright"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="#ffffff"
+        android:textSize="@dimen/album_textsize"/>
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/score_marright"
+        android:paddingBottom="@dimen/score_paddingbottom"
+        android:text="aa"
+        android:textColor="#ffaf01"
+        android:textSize="@dimen/score_textsize"/>
+
+</RelativeLayout>
+
+

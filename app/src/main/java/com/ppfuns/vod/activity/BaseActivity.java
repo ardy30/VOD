@@ -1,0 +1,387 @@
+package com.ppfuns.vod.activity;
+
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v4.app.FragmentActivity;
+import android.text.TextUtils;
+import android.view.KeyEvent;
+import android.view.View;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.ppfuns.model.db.ColumnDBManager;
+import com.ppfuns.model.entity.Columns;
+import com.ppfuns.model.entity.Data;
+import com.ppfuns.model.entity.Response;
+import com.ppfuns.ui.dialog.LoadingDialog;
+import com.ppfuns.ui.view.TipsDialog;
+import com.ppfuns.util.BitmapUtils;
+import com.ppfuns.util.LogUtils;
+import com.ppfuns.util.MD5Utils;
+import com.ppfuns.util.SysUtils;
+import com.ppfuns.util.https.ContractUrl;
+import com.ppfuns.util.https.HttpUtil;
+import com.ppfuns.util.https.RequestCode;
+import com.ppfuns.vod.R;
+import com.ppfuns.vod.service.ColumnService;
+import com.zhy.http.okhttp.callback.Callback;
+
+import java.io.File;
+import java.util.List;
+
+import okhttp3.Call;
+
+public abstract class BaseActivity extends FragmentActivity {
+
+    private static final String TAG = BaseActivity.class.getSimpleName();
+
+    protected ImageLoader imageLoader = ImageLoader.getInstance();
+    protected LoadingDialog loadingDialog;
+    protected TipsDialog mTipsDialog;
+    protected TipsDialog.Builder mBuilder;
+    protected Columns mColumns;
+    private String mColumnUrl;
+    // 栏目存储超时时间，单位秒
+    private long COLUMN_TIME_OUT = 3600 * 2;
+
+    protected int vodColumnId = -1;
+
+    protected int menuCount = 0;
+    protected boolean mIsRequestColumn = true;
+    private final int OPEN_MENU = 1;
+
+    private Bitmap mBitmap;
+
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case OPEN_MENU:
+                    menuCount = 0;
+                    break;
+            }
+        }
+    };
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        getData(intent);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);//横屏
+        super.onCreate(savedInstanceState);
+        getData(getIntent());
+        setContentView(R.layout.activity_base);
+        loadingDialog = new LoadingDialog(this, getString(R.string.data_loading));
+        mBuilder = new TipsDialog.Builder(this).setRetryButton(getString(R.string.tips_retry), new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reLoad();
+            }
+        }).setCancelButton(getString(R.string.tips_cancel), new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cancel();
+            }
+        });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        registRefWatcher();
+        handler.removeMessages(OPEN_MENU);
+        handler = null;
+        if (mBitmap != null) {
+            mBitmap.recycle();
+        }
+    }
+
+    public void chekcUpdateForBg(Columns compare) {
+        LogUtils.i(TAG, "chekcUpdateForBg");
+        if (compare == null) {
+            return;
+        }
+        boolean isUpdate = true;
+        String posterUrl = compare.logoDetail;
+        Columns columns = getColumn();
+        if (columns != null && compare != null) {
+            try{
+                if (TextUtils.equals(columns.logoDetail, posterUrl)
+                        && TextUtils.equals(columns.columnBg, MD5Utils.md5ForString(posterUrl))) {
+                    isUpdate = false;
+                }
+            }catch (Exception e) {
+                LogUtils.e(TAG, e.getMessage());
+            }
+        }
+        mColumns = compare;
+        if (isUpdate) {
+            loadImage(posterUrl);
+//            ColumnDBManager.getInstance(this).addColumn(compare);
+        }
+    }
+
+    private void loadImage(final String posterUrl) {
+        LogUtils.i(TAG, "loadImage");
+        if (TextUtils.isEmpty(posterUrl)) {
+            return;
+        }
+        Glide.with(this).load(posterUrl).asBitmap().into(new SimpleTarget<Bitmap>() {
+            @Override
+            public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                if (resource != null) {
+                    saveImage(resource);
+                    if (mColumns != null) {
+                        mColumns.columnBg = MD5Utils.md5ForString(posterUrl);
+                        ColumnDBManager.getInstance(BaseActivity.this.getApplicationContext()).addColumn(mColumns);
+                    }
+                }
+            }
+
+            @Override
+            public void onLoadFailed(Exception e, Drawable errorDrawable) {
+                super.onLoadFailed(e, errorDrawable);
+                ColumnDBManager.getInstance(BaseActivity.this.getApplicationContext()).addColumn(mColumns);
+                LogUtils.e(TAG, "onLoadFailed");
+            }
+        });
+    }
+
+    private void saveImage(Bitmap bm) {
+        LogUtils.i(TAG, "saveImage");
+        String path = getPath();
+        String fileName = vodColumnId + ".png";
+        Bitmap bitmap = BitmapUtils.scaleBitmap(this, bm);
+        BitmapUtils.saveBitmap(path, fileName, bitmap);
+    }
+
+    private String getPath() {
+        String path = null;
+        if (TextUtils.equals(Environment.MEDIA_MOUNTED, Environment.getExternalStorageState())) {
+            path = Environment.getExternalStorageDirectory() + "/" +getPackageName() + "/files/columns/";
+        } else {
+            path = this.getFilesDir() + "/columns/";
+        }
+        return path;
+    }
+
+    protected void getColumnCallBack() {
+
+    }
+
+    protected void getColumnContent() {
+        LogUtils.i(TAG, "getColumnContent");
+        HttpUtil.getHttpHtml(mColumnUrl, new Callback<Response<List<Columns>>>() {
+
+            @Override
+            public boolean validateReponse(okhttp3.Response response, int id) {
+                LogUtils.i(TAG, "album_response_code: " + response.code());
+                return response.isSuccessful();
+            }
+
+            @Override
+            public com.ppfuns.model.entity.Response<List<Columns>> parseNetworkResponse(okhttp3.Response response, int id) throws Exception {
+                String result = response.body().string();
+                LogUtils.d(TAG, "response result " + result);
+                com.ppfuns.model.entity.Response<List<Columns>> res = new Gson().fromJson(result, new TypeToken<Response<List<Columns>>>(){}.getType());
+                return res;
+            }
+
+            @Override
+            public void onError(Call call, Exception e, int id) {
+                LogUtils.e(TAG, "onError" + e.getMessage());
+            }
+
+            @Override
+            public void onResponse(com.ppfuns.model.entity.Response<List<Columns>> response, int id) {
+                LogUtils.i(TAG, "column onResponse");
+                if (response != null) {
+                    Data data = response.data;
+                    if (data != null) {
+                        if (TextUtils.equals(data.code, RequestCode.RESPONSE_SUCCESS)) {
+                            List<Columns> list = (List<Columns>) data.result;
+                            if (list != null && list.size() > 0) {
+                                mColumns = list.get(0);
+                                chekcUpdateForBg(mColumns);
+                                getColumnCallBack();
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    private void getColumsBg(int cpId) {
+        LogUtils.i(TAG, "getColumsBg");
+        String path = getPath();
+        String sFile = path + cpId + ".png";
+        File file = new File(sFile);
+        if (file.exists()) {
+            mBitmap = BitmapFactory.decodeFile(sFile);
+        }
+        getColumnContent();
+    }
+
+    private void requestContent(int cpId) {
+        Intent serviceIntent = new Intent(this, ColumnService.class);
+        serviceIntent.putExtra(PlayerActivity.COL_CONTENTID, cpId);
+        startService(serviceIntent);
+    }
+
+    private void getData(Intent intent) {
+        if (intent != null) {
+            try {
+                vodColumnId = intent.getIntExtra("col_contentId", -1);
+                LogUtils.d(TAG, "_columnId : " + vodColumnId);
+                if (vodColumnId == -1) {
+                    vodColumnId = SysUtils.getColumnId();
+                }
+            } catch (Exception e) {
+                LogUtils.e(TAG, e.toString());
+            }
+            if(!mIsRequestColumn) {
+                return;
+            }
+            mColumnUrl = SysUtils.getContentUrl() + ContractUrl.COMMON + ContractUrl.COMMOL_COLUMNS_INFO + vodColumnId + "-0.json";
+            getColumsBg(vodColumnId);
+        }
+    }
+
+    public Columns getColumn() {
+        LogUtils.i(TAG, "getColumn");
+        Columns Column = ColumnDBManager.getInstance(this.getApplicationContext()).getColumn(vodColumnId);
+        LogUtils.i(TAG, "----getColumn----");
+        return Column;
+    }
+
+    public int getVodColumnId() {
+        return vodColumnId;
+    }
+
+    // 注册内存泄露监听
+    protected void registRefWatcher() {
+//        RefWatcher refWatcher = BaseApplication.getRefWatcher(this);
+//        refWatcher.watch(this);
+    }
+
+
+    public void showLoadingProgressDialog(String content) {
+        if (loadingDialog != null && !loadingDialog.isShowing()) {
+            loadingDialog.show();
+        } else {
+            loadingDialog = new LoadingDialog(this, content);
+            loadingDialog.show();
+        }
+        //loadingDialog.setDialogContent(content) ;
+    }
+
+    public void dissmissLoadingDialog() {
+        if (loadingDialog != null && loadingDialog.isShowing()) {
+            loadingDialog.dismiss();
+            loadingDialog = null;
+
+        }
+    }
+
+    public void showDialogTips(String tips) {
+        hideDialogTips();
+        mTipsDialog = mBuilder.setMessage(tips).create();
+        if (!isFinishing())
+            mTipsDialog.show();
+    }
+
+    public void hideDialogTips() {
+        if (mTipsDialog != null) {
+            mTipsDialog.dismiss();
+            mTipsDialog = null;
+        }
+    }
+
+    public void showOnlyMessageDialog(String onlyMessage, boolean disableBackKey) {
+        mTipsDialog = null;
+        mTipsDialog = mBuilder.setOnlyMessage(onlyMessage).create();
+        mTipsDialog.setDisableBackKey(disableBackKey);
+        mTipsDialog.show();
+    }
+
+    public void showCancelDialog(String onlyMessage) {
+        mTipsDialog = null;
+
+    }
+
+    // 页面错误重新加载数据请求
+    protected void reLoad() {
+        dismiss();
+    }
+
+    protected void cancel() {
+        dismiss();
+    }
+
+    private void dismiss() {
+        if (mTipsDialog != null && mTipsDialog.isShowing()) {
+            mTipsDialog.dismiss();
+            mTipsDialog = null;
+        }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (event.getAction() == KeyEvent.ACTION_DOWN) {
+            if (keyCode == KeyEvent.KEYCODE_MENU || keyCode == KeyEvent.KEYCODE_M) {
+                menuCount++;
+                LogUtils.i(TAG, "onKeyDown_keycode_menu  " + menuCount);
+                if (menuCount == 1) {
+                    handler.removeMessages(OPEN_MENU);
+                    handler.sendEmptyMessageDelayed(OPEN_MENU, 3000);
+                }
+//                if (menuCount == 5) {
+//                    LogUtils.i(TAG, "open_menu");
+//                    Intent intent = new Intent(BaseActivity.this, BackDoorActivity.class);
+//                    startActivity(intent);
+//                    return true;
+//                }
+
+            }
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+//        MobclickAgent.onPause(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        View view = getWindow().getDecorView();
+        if (mBitmap != null) {
+            LogUtils.i(TAG, "show background");
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                view.setBackground(new BitmapDrawable(mBitmap));
+            }
+        }
+    }
+}

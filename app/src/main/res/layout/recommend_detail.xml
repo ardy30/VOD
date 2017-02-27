@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:id="@+id/fl_item"
+             android:layout_width="@dimen/album_recommend_iv_width"
+             android:layout_height="@dimen/album_recommend_iv_height"
+             android:focusable="true"
+             android:paddingRight="@dimen/album_recommend_mright">
+
+    <ImageView
+        android:id="@+id/iv_pic"
+        android:layout_width="@dimen/album_recommend_iv_width"
+        android:layout_height="@dimen/album_recommend_iv_height"
+        android:focusable="false"
+        android:paddingRight="@dimen/album_recommend_mright"
+        android:scaleType="fitXY"
+        android:src="@drawable/detail_default_192x257"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_recommend_frame_height"
+        android:layout_gravity="bottom">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/mask1"/>
+
+        <com.ppfuns.ui.view.AlwaysMarqueeTextView
+            android:id="@+id/item_tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="marquee"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:singleLine="true"
+            android:text="@string/app_name"
+            android:textSize="@dimen/album_recommend_tv_size"/>
+    </FrameLayout>
+
+
+</FrameLayout>

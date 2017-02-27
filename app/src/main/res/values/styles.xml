@@ -1,0 +1,87 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+
+    <style name="loadingDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+
+    </style>
+
+
+
+
+    <!-- fangyuan -->
+
+
+    <style name="index_img_style">
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+    </style>
+
+    <!--首页内容部分文字的style-->
+    <style name="mainContentTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:focusable">false</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:layout_marginBottom">@dimen/main_content_tv_mbottom</item>
+        <item name="android:textSize">@dimen/main_content_tv_size</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_marginLeft">@dimen/main_content_tv_mleft</item>
+        <item name="android:ellipsize">marquee</item>
+    </style>
+
+    <style name="mainContentTitleTextStyle" parent="mainContentTextStyle">
+        <item name="android:layout_marginBottom">45px</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:paddingRight">0px</item>
+    </style>
+
+    <style name="mainContentDownTextStyle"  parent="mainContentTextStyle">
+        <item name="android:textSize">@dimen/main_content_down_tv_size</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_marginBottom">@dimen/px20</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:paddingRight">0px</item>
+    </style>
+
+    <style name="NotitleTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="DialogStyle">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+
+    <style name="ProgressHintPopupAnimation">
+        <item name="@android:windowEnterAnimation">@anim/progress_hint_popup_show</item>
+        <item name="@android:windowExitAnimation">@anim/progress_hint_popup_hide</item>
+    </style>
+
+    <style name="Widget.ProgressHintBase" parent="android:Widget.Holo.SeekBar"/>
+
+    <style name="Widget.ProgressHint" parent="Widget.ProgressHintBase">
+        <item name="popupLayout">@layout/layout_seekbar_popwindow</item>
+        <item name="popupStyle">follow</item>
+        <item name="popupAnimationStyle">@style/ProgressHintPopupAnimation</item>
+        <item name="popupOffset">0dp</item>
+        <item name="popupAlwaysShown">false</item>
+        <item name="popupDraggable">true</item>
+    </style>
+</resources>

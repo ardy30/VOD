@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TextViewWithTTF">
+        <attr name="ttf_name" format="string" />
+    </declare-styleable>
+
+    <!-- 倒影控件属性 -->
+    <declare-styleable name="reflectItemView">
+        <attr name="isReflect" format="boolean" />
+        <attr name="isShape" format="boolean" />
+        <attr name="reflect_height" format="dimension" />
+        <attr name="radius" format="dimension" />
+        <attr name="refle_spacing" format="dimension" />
+    </declare-styleable>
+
+    <!-- 顶层控件属性 -->
+    <declare-styleable name="MainUpView">
+        <attr name="upImageRes" format="reference" />
+        <attr name="shadowImageRes" format="reference" />
+    </declare-styleable>
+
+    <!-- 标签控件 -->
+    <declare-styleable name="LabelView">
+        <!-- 设置文字内容 -->
+        <attr name="lv_text" format="string" />
+        <!-- 设置文字颜色,默认#ffffff -->
+        <attr name="lv_text_color" format="color" />
+        <!-- 设置文字大小,默认11sp -->
+        <attr name="lv_text_size" format="dimension" />
+        <!-- 设置文字是否支持加粗,默认true -->
+        <attr name="lv_text_bold" format="boolean" />
+        <!-- 设置文字是否支持全部大写,默认true-->
+        <attr name="lv_text_all_caps" format="boolean" />
+        <!-- 设置背景颜色,默认"#FF4081"-->
+        <attr name="lv_background_color" format="color" />
+        <!-- 设置LabelView所在矩形最小宽高,默认mFillTriangle?35dp:50dp-->
+        <attr name="lv_min_size" format="dimension" />
+        <!-- 设置文字上下padding,默认3.5dp,mFillTriangle为true时无效-->
+        <attr name="lv_padding" format="dimension" />
+        <!-- 设置LabelView方向 -->
+        <attr name="lv_gravity" format="enum">
+            <enum name="TOP_LEFT" value="51" />
+            <enum name="TOP_RIGHT" value="53" />
+            <enum name="BOTTOM_LEFT" value="83" />
+            <enum name="BOTTOM_RIGHT" value="85" />
+        </attr>
+        <!-- 设置是否填充三角区域,默认false -->
+        <attr name="lv_fill_triangle" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="TvTabHost">
+        <attr name="cursorRes" format="reference" />
+        <attr name="textColorDefault" format="color" />
+        <attr name="textColorSelected" format="color" />
+        <attr name="titleWidth" format="dimension"></attr>
+        <attr name="titleHeight" format="dimension"></attr>
+        <attr name="titleSpace" format="dimension"></attr>
+        <attr name="textSize" format="dimension" />
+        <attr name="dividerHeight" format="dimension"></attr>
+        <attr name="durationScroll" format="integer"></attr>
+        <attr name="scalable" format="boolean"></attr>
+        <attr name="scale" format="float"></attr>
+        <attr name="animationType">
+            <enum name="DEFAULT" value="0"></enum>
+            <enum name="TRANSLATE" value="1"></enum>
+        </attr>
+        <attr name="durationLarge" format="integer"></attr>
+        <attr name="durationSmall" format="integer"></attr>
+        <attr name="delay" format="integer" />
+        <attr name="cursorWidth" format="dimension"></attr>
+        <attr name="cursorHeight" format="dimension"></attr>
+        <attr name="cursorMarginLeft" format="dimension"></attr>
+        <attr name="cursorMarginTop" format="dimension"></attr>
+        <attr name="cursorMarginRight" format="dimension"></attr>
+        <attr name="cursorMarginBottom" format="dimension"></attr>
+    </declare-styleable>
+    <declare-styleable name="FancyCoverFlow">
+        <attr name="unselectedAlpha" format="float" />
+        <attr name="unselectedSaturation" format="float" />
+        <attr name="unselectedScale" format="float" />
+        <attr name="maxRotation" format="integer" />
+        <attr name="scaleDownGravity" format="float" />
+        <attr name="actionDistance" format="integer">
+            <enum name="auto" value="2147483647" />
+        </attr>
+    </declare-styleable>
+
+
+    //带数字的圆形进度条
+    <declare-styleable name="RoundProgressBar">
+        <attr name="roundColor" format="color" />
+        <attr name="roundProgressColor" format="color" />
+        <attr name="roundWidth" format="dimension"></attr>
+        <attr name="textColor" format="color" />
+        <attr name="lv_textSize" format="dimension" />
+        <attr name="max" format="integer"></attr>
+        <attr name="textIsDisplayable" format="boolean"></attr>
+        <attr name="style">
+            <enum name="STROKE" value="0"></enum>
+            <enum name="FILL" value="1"></enum>
+        </attr>
+    </declare-styleable>
+
+    <!-- Specifies how to place the content of an object, both
+         on the x- and y-axis, within the object itself. -->
+    <attr name="gravity">
+        <!-- Push object to the top of its container, not changing its size. -->
+        <flag name="top" value="0x30" />
+        <!-- Push object to the bottom of its container, not changing its size. -->
+        <flag name="bottom" value="0x50" />
+        <!-- Push object to the left of its container, not changing its size. -->
+        <flag name="left" value="0x03" />
+        <!-- Push object to the right of its container, not changing its size. -->
+        <flag name="right" value="0x05" />
+        <!-- Place object in the vertical center of its container, not changing its size. -->
+        <flag name="center_vertical" value="0x10" />
+        <!-- Grow the vertical size of the object if needed so it completely fills its container. -->
+        <flag name="fill_vertical" value="0x70" />
+        <!-- Place object in the horizontal center of its container, not changing its size. -->
+        <flag name="center_horizontal" value="0x01" />
+        <!-- Grow the horizontal size of the object if needed so it completely fills its container. -->
+        <flag name="fill_horizontal" value="0x07" />
+        <!-- Place the object in the center of its container in both the vertical and horizontal axis, not changing its size. -->
+        <flag name="center" value="0x11" />
+        <!-- Grow the horizontal and vertical size of the object if needed so it completely fills its container. -->
+        <flag name="fill" value="0x77" />
+        <!-- Additional option that can be set to have the top and/or bottom edges of
+             the child clipped to its container's bounds.
+             The clip will be based on the vertical gravity: a top gravity will clip the bottom
+             edge, a bottom gravity will clip the top edge, and neither will clip both edges. -->
+        <flag name="clip_vertical" value="0x80" />
+        <!-- Additional option that can be set to have the left and/or right edges of
+             the child clipped to its container's bounds.
+             The clip will be based on the horizontal gravity: a left gravity will clip the right
+             edge, a right gravity will clip the left edge, and neither will clip both edges. -->
+        <flag name="clip_horizontal" value="0x08" />
+    </attr>
+    <!-- Default GridView style. -->
+    <attr name="gridViewStyle" format="reference" />
+    <declare-styleable name="TwoWayAbsListView">
+        <!-- Drawable used to indicate the currently selected item in the list. -->
+        <attr name="listSelector" format="color|reference" />
+        <!-- When set to true, the selector will be drawn over the selected item.
+             Otherwise the selector is drawn behind the selected item. The default
+             value is false. -->
+        <attr name="drawSelectorOnTop" format="boolean" />
+        <!-- Used by ListView and GridView to stack their content from the bottom. -->
+        <attr name="stackFromBottom" format="boolean" />
+        <!-- When set to true, the list uses a drawing cache during scrolling.
+             This makes the rendering faster but uses more memory. The default
+             value is true. -->
+        <attr name="scrollingCache" format="boolean" />
+        <!-- When set to true, the list will filter results as the user types. The
+             List's adapter must support the Filterable interface for this to work. -->
+        <!-- <attr name="textFilterEnabled" format="boolean" /> -->
+        <!-- Sets the transcript mode for the list. In transcript mode, the list
+             scrolls to the bottom to make new items visible when they are added. -->
+        <attr name="transcriptMode">
+            <!-- Disables transcript mode. This is the default value. -->
+            <enum name="disabled" value="0"/>
+            <!-- The list will automatically scroll to the bottom when
+                 a data set change notification is received and only if the last item is
+                 already visible on screen. -->
+            <enum name="normal" value="1" />
+            <!-- The list will automatically scroll to the bottom, no matter what items
+                 are currently visible. -->
+            <enum name="alwaysScroll" value="2" />
+        </attr>
+        <!-- Indicates that this list will always be drawn on top of solid, single-color
+             opaque background. This allows the list to optimize drawing. -->
+        <attr name="cacheColorHint" format="color" />
+        <!-- Enables the fast scroll thumb that can be dragged to quickly scroll through
+             the list. -->
+        <!-- <attr name="fastScrollEnabled" format="boolean" /> -->
+        <!-- When set to true, the list will use a more refined calculation
+             method based on the pixels height of the items visible on screen. This
+             property is set to true by default but should be set to false if your adapter
+             will display items of varying heights. When this property is set to true and
+             your adapter displays items of varying heights, the scrollbar thumb will
+             change size as the user scrolls through the list. When set to fale, the list
+             will use only the number of items in the adapter and the number of items visible
+             on screen to determine the scrollbar's properties. -->
+        <attr name="smoothScrollbar" format="boolean" />
+
+        <!-- Use this attribute to control which direction the GridView scrolls when in
+             portrait orientation -->
+        <attr name="scrollDirectionPortrait">
+            <!-- Scroll up vertically. This is the default value. -->
+            <enum name="vertical" value="0"/>
+            <!-- Scroll horizontally. -->
+            <enum name="horizontal" value="1" />
+        </attr>
+        <attr name="scrollDirectionLandscape">
+            <!-- Scroll up vertically. This is the default value. -->
+            <enum name="vertical" value="0"/>
+            <!-- Scroll horizontally. -->
+            <enum name="horizontal" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="TwoWayGridView">
+        <attr name="horizontalSpacing" format="dimension" />
+        <attr name="verticalSpacing" format="dimension" />
+        <attr name="stretchMode">
+            <enum name="none" value="0"/>
+            <enum name="spacingWidth" value="1" />
+            <enum name="columnWidth" value="2" />
+            <enum name="spacingWidthUniform" value="3" />
+        </attr>
+        <attr name="columnWidth" format="dimension" />
+        <attr name="rowHeight" format="dimension" />
+        <attr name="numColumns" format="integer" min="0">
+            <enum name="auto_fit" value="-1" />
+        </attr>
+        <attr name="numRows" format="integer" min="0">
+            <enum name="auto_fit" value="-1" />
+        </attr>
+        <attr name="gravity" />
+    </declare-styleable>
+
+    <declare-styleable name="CircularProgress">
+        <attr name="borderWidth" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="ShapeImageView">
+        <attr name="shape" format="enum">
+            <enum name="rect" value="1"/>
+            <enum name="circle" value="2"/>
+            <enum name="oval" value="3"/>
+        </attr>
+        <attr name="round_radius" format="dimension"/>
+        <attr name="border_size" format="dimension"/>
+        <attr name="border_color" format="color"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="ProgressHint">
+        <attr name="popupLayout" format="reference" />
+        <attr name="popupOffset" format="dimension" />
+        <attr name="popupStyle" format="enum">
+            <enum name="follow" value="0"/>
+            <enum name="fixed" value="1"/>
+        </attr>
+        <attr name="popupAnimationStyle" format="reference"/>
+        <attr name="popupAlwaysShown" format="boolean"/>
+        <attr name="popupDraggable" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CYTextView">
+        <attr name="endTips" format="string"></attr>
+    </declare-styleable>
+</resources>

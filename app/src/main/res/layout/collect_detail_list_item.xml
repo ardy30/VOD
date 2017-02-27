@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/collect_list_item_layout_padding"
+    android:paddingBottom="@dimen/collect_list_item_layout_padding"
+    android:id="@+id/rootlayout">
+    <TextView
+        android:id="@+id/channelCategoryName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/demand_records"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/collect_list_item_textsize"
+        android:layout_centerInParent="true"
+        android:singleLine="true"/>>
+
+
+
+
+</RelativeLayout>

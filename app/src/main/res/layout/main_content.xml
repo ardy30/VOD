@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/main_content_mleft"
+                android:layout_marginRight="@dimen/main_content_mright"
+                android:layout_marginTop="@dimen/main_content_mtop"
+                android:clipChildren="false"
+                android:clipToPadding="false">
+
+    <com.ppfuns.ui.view.SmoothHorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:scrollbars="none">
+
+        <!--paddingLest and paddingRight-->
+        <com.ppfuns.ui.view.layout.RelativeMainLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+            <!--热门电视剧-->
+
+            <RelativeLayout
+                android:id="@+id/main_rl_hotTvPlay"
+                style="@style/index_img_style"
+                android:layout_width="@dimen/main_content_rl_hottvplay_width"
+                android:layout_height="@dimen/main_content_rl_hottvplay_height"
+                android:layout_marginRight="@dimen/main_content_item_margin"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <ImageView
+                    android:id="@+id/main_iv_hotTvPlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusable="false"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ju_default_420x692"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/main_content_mas_height"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/mas3"
+                    android:visibility="gone"/>
+
+                <com.ppfuns.ui.view.AlwaysMarqueeTextView
+                    android:id="@+id/main_tv_hotTvPlay"
+                    style="@style/mainContentTitleTextStyle"/>
+
+                <com.ppfuns.ui.view.AlwaysMarqueeTextView
+                    android:id="@+id/main_tv_hotTvPlayFocus"
+                    style="@style/mainContentDownTextStyle"/>
+
+            </RelativeLayout>
+
+            <!--热门电影-->
+            <RelativeLayout
+                android:id="@+id/main_rl_hotMovie"
+                style="@style/index_img_style"
+                android:layout_width="@dimen/main_content_rl_hotmovie_width"
+                android:layout_height="@dimen/main_content_rl_hotmovie_height"
+                android:layout_marginBottom="@dimen/main_content_item_margin"
+                android:layout_marginRight="@dimen/main_content_item_margin"
+                android:layout_toRightOf="@id/main_rl_hotTvPlay"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <ImageView
+                    android:id="@+id/main_iv_hotMovie"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusable="false"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ju_default_730x458"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/main_content_mas_height"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/mas3"
+                    android:visibility="gone"/>
+
+                <com.ppfuns.ui.view.AlwaysMarqueeTextView
+                    android:id="@+id/main_tv_hotMovie"
+                    style="@style/mainContentTitleTextStyle"/>
+
+                <com.ppfuns.ui.view.AlwaysMarqueeTextView
+                    android:id="@+id/main_tv_hotMovieFocus"
+                    style="@style/mainContentDownTextStyle"/>
+
+            </RelativeLayout>
+
+            <!--热门动漫-->
+            <RelativeLayout
+                android:id="@+id/main_rl_animation"
+                style="@style/index_img_style"
+                android:layout_width="@dimen/main_content_rl_animation_width"
+                android:layout_height="@dimen/main_content_rl_animation_height"
+                android:layout_below="@id/main_rl_hotMovie"
+                android:layout_marginRight="@dimen/main_content_item_margin"
+                android:layout_toRightOf="@id/main_rl_hotTvPlay"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <ImageView
+                    android:id="@+id/main_iv_animation"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusable="false"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ju_default_360x224"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/main_content_mas_height"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/mas3"
+                    android:visibility="gone"/>
+
+                <com.ppfuns.ui.view.AlwaysMarqueeTextView
+                    android:id="@+id/main_tv_animation"
+                    style="@style/mainContentTitleTextStyle"/>
+
+                <com.ppfuns.ui.view.AlwaysMarqueeTextView
+                    android:id="@+id/main_tv_animation_focus"
+                    style="@style/mainContentDownTextStyle"/>
+
+            </RelativeLayout>
+
+            <!--热门综艺-->
+            <RelativeLayout
+                android:id="@+id/main_rl_hotvariety"
+                style="@style/index_img_style"
+                android:layout_width="@dimen/main_content_rl_variety_width"
+                android:layout_height="@dimen/main_content_rl_variety_height"
+                android:layout_below="@id/main_rl_hotMovie"
+                android:layout_marginRight="@dimen/main_content_item_margin"
+                android:layout_toRightOf="@id/main_rl_animation"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <ImageView
+                    android:id="@+id/main_iv_hotvariety"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusable="false"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ju_default_360x224"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/main_content_mas_height"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/mas3"
+                    android:visibility="gone"/>
+
+                <com.ppfuns.ui.view.AlwaysMarqueeTextView
+                    android:id="@+id/main_tv_hotvariety"
+                    style="@style/mainContentTitleTextStyle"/>
+
+                <com.ppfuns.ui.view.AlwaysMarqueeTextView
+                    android:id="@+id/main_tv_hotvariety_focus"
+                    style="@style/mainContentDownTextStyle"/>
+
+            </RelativeLayout>
+
+            <!--体育专区-->
+            <RelativeLayout
+                android:id="@+id/main_rl_sports"
+                android:layout_width="@dimen/main_content_rl_sports_width"
+                android:layout_height="@dimen/main_content_rl_sports_height"
+                android:layout_marginRight="@dimen/main_content_item_margin"
+                android:layout_toRightOf="@id/main_rl_hotMovie"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <ImageView
+                    android:id="@+id/main_iv_sports"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusable="false"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ju_default_360x224"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/main_content_mas_height"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/mas3"
+                    android:visibility="gone"/>
+
+                <com.ppfuns.ui.view.AlwaysMarqueeTextView
+                    android:id="@+id/main_tv_sports"
+                    style="@style/mainContentTitleTextStyle"/>
+
+                <com.ppfuns.ui.view.AlwaysMarqueeTextView
+                    android:id="@+id/main_tv_sports_focus"
+                    style="@style/mainContentDownTextStyle"/>
+
+            </RelativeLayout>
+
+            <!--专题-->
+            <RelativeLayout
+                android:id="@+id/main_rl_special"
+                android:layout_width="@dimen/main_content_rl_special_width"
+                android:layout_height="@dimen/main_content_rl_special_height"
+                android:layout_below="@id/main_rl_sports"
+                android:layout_marginRight="@dimen/main_content_item_margin"
+                android:layout_marginTop="@dimen/main_content_item_margin"
+                android:layout_toRightOf="@id/main_rl_hotMovie"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <ImageView
+                    android:id="@+id/main_iv_special"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusable="false"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ju_default_360x458"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/main_content_mas_height"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/mas3"
+                    android:visibility="gone"/>
+
+                <com.ppfuns.ui.view.AlwaysMarqueeTextView
+                    android:id="@+id/main_tv_special"
+                    style="@style/mainContentTitleTextStyle"/>
+
+                <com.ppfuns.ui.view.AlwaysMarqueeTextView
+                    android:id="@+id/main_tv_special_focus"
+                    style="@style/mainContentDownTextStyle"/>
+
+            </RelativeLayout>
+
+            <!--栏目位-->
+            <com.ppfuns.ui.view.recycle.RecyclerViewTV
+                android:id="@+id/main_rv_column"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/main_content_rv_height"
+                android:layout_toRightOf="@id/main_rl_sports"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                />
+
+
+        </com.ppfuns.ui.view.layout.RelativeMainLayout>
+
+    </com.ppfuns.ui.view.SmoothHorizontalScrollView>
+
+    <com.ppfuns.ui.view.MainUpView
+        android:id="@+id/mainUpView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+
+</RelativeLayout>

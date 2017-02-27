@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 全键盘-26-字母 -->
+<Keyboard
+
+    key_text_size="@dimen/search_keyborad_textSize"
+    key_height="@dimen/key_size"
+    key_width="@dimen/key_size"
+    key_left_padding="@dimen/key_left_padding"
+    key_top_padding="@dimen/key_top_padding"
+    key_select_res="@drawable/key_search_focus"
+    key_text_color="#88ffffff"
+    left_right_move="false"
+    start_pos_x="0px"
+    start_pos_y="200px"
+    top_bottom_move="false">
+
+    <!-- 第一行 -->
+    <row>
+        <keys
+            codes="65|66|67|68|69"
+            labels="A|B|C|D|E"
+            splitter="|"/>
+
+    </row>
+    <row>
+        <keys
+            codes="70|71|72|73|74"
+            labels="F|G|H|I|J"
+            splitter="|"/>
+
+    </row>
+    <row>
+        <keys
+            codes="75|76|77|78|79"
+            labels="K|L|M|N|O"
+            splitter="|"/>
+
+    </row>
+    <row>
+        <keys
+            codes="80|81|82|83|84"
+            labels="P|Q|R|S|T"
+            splitter="|"/>
+
+    </row>
+    <row>
+        <keys
+            codes="85|86|87|88|89"
+            labels="U|V|W|X|Y"
+            splitter="|"/>
+
+    </row>
+    <row>
+        <keys
+            codes="90"
+            labels="Z"
+            splitter="|"
+            />
+
+    </row>
+
+
+</Keyboard>

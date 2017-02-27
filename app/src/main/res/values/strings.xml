@@ -1,0 +1,129 @@
+<resources xmlns:xliff="http://schemas.android.com/tools">
+    <string name="app_name">i家影院</string>
+
+    <!-- 专辑详情页 -->
+    <string name="ablum_btn_play">播&#160;&#160;放</string>
+    <string name="ablum_btn_continue_play">续&#160;&#160;播</string>
+    <string name="ablum_btn_episode">选&#160;&#160;集</string>
+    <string name="ablum_btn_collection">收&#160;&#160;藏</string>
+    <string name="ablum_btn_order">订&#160;&#160;购</string>
+    <string name="ablum_btn_free">免费试看</string>
+    <string name="ablum_btn_collection_success">收藏成功</string>
+    <string name="ablum_btn_collection_failed">收藏失败</string>
+    <string name="ablum_btn_cancel_collection">取消收藏</string>
+    <string name="ablum_btn_cancel_collection_success">取消收藏成功</string>
+    <string name="ablum_btn_cancel_collection_failed">取消收藏失败</string>
+    <string name="ablum_txt_type">类型:</string>
+    <string name="ablum_txt_director">导演:</string>
+    <string name="ablum_txt_mark">评分:&#160;</string>
+    <string name="ablum_txt_actors">演员:</string>
+    <string name="ablum_txt_introduction">简介:</string>
+    <string name="ablum_txt_recommend">相关推荐:</string>
+    <string name="ablum_txt_episode">影片选集:</string>
+    <string name="film">电 影</string>
+    <string name="album_btn_pay_column">专区订购</string>
+    <string name="album_no_permission">无权限操作</string>
+
+
+    <!--主页相关-->
+    <string name="txt_double_space">&#160;&#160;</string>
+
+
+    <string name="keycode_space">62</string> <!-- 空格 -->
+    <string name="keycode_center">66</string> <!-- 回车 -->
+    <string name="keycode_back">4</string> <!-- 返回 -->
+    <string name="keycode_left">21</string> <!-- 左边 -->
+    <string name="keycode_right">22</string> <!-- 右边 -->
+    <string name="keycode_del">67</string> <!-- 删除 -->
+
+
+    <!--切换域名-->
+    <string name="menu_btn_formal">正式环境</string>
+    <string name="menu_btn_test">测试环境</string>
+    <string name="menu_btn_commit">提交</string>
+    <string name="menu_txt_domain">域名:</string>
+    <string name="menu_txt_domain_user">用户中心域名:</string>
+    <string name="menu_txt_version_name">版本名称:</string>
+    <string name="menu_txt_version_code">版本号:</string>
+    <string name="menu_txt_svn_version">svn版本:</string>
+    <string name="menu_txt_column">请输入栏目ID:</string>
+    <string name="menu_txt_confirm_tips">修改成功</string>
+    <!--记录收藏页-->
+    <string name="demand_records">点播记录</string>
+    <string name="collection_records">收藏记录</string>
+    <string name="purchase_records">购买记录</string>
+    <string name="record_or_collection">记录/收藏</string>
+    <string name="left">40</string>
+    <string name="record_play_time">已看到</string>
+    <string name="record_play_end">已观看结束</string>
+
+    <!-- 提示 -->
+    <string name="network_error">网络不可用，请检查网络状况</string>
+    <string name="data_error">数据异常</string>
+    <string name="operate_error">操作失败,数据异常!</string>
+    <string name="film_shelf">该影片已下架</string>
+    <string name="authority_data_error">鉴权数据异常</string>
+    <string name="data_loading">正在加载...</string>
+    <string name="tips_confirm">确定</string>
+    <string name="tips_retry">重试</string>
+    <string name="tips_cancel">取消</string>
+    <string name="userid_error">用户认证未通过!</string>
+    <string name="request_userid">用户认证失败,重新请求用户认证信息!</string>
+    <string name="authority_failed_tips">请先购买该影片</string>
+    <string name="album_content_empty">专辑内容为空</string>
+    <string name="pay_success">支付成功</string>
+    <string name="pay_failed">支付失败</string>
+    <string name="pay_authority_error">鉴权数据异常,退出播放</string>
+    <string name="elapsed_time_short_format_mm_ss"><xliff:g example="1" id="minutes">%1$02d</xliff:g>:<xliff:g example="23" id="seconds">%2$02d</xliff:g></string>
+
+    <!-- Format string for times like "1:43:33" (1 hour, 43 minutes, 33 seconds) -->
+    <string name="elapsed_time_short_format_h_mm_ss"><xliff:g example="1" id="hours">%1$d</xliff:g>:<xliff:g example="43" id="minutes">%2$02d</xliff:g>:<xliff:g example="33" id="seconds">%3$02d</xliff:g></string>
+
+    <string name="totaltext">总共</string>
+    <string name="totaltext1">部影片</string>
+    <string name="empty"></string>
+    <string name="wrap">\n</string>
+    <string name="sslash">/</string>
+    <string name="szero">0</string>
+    <string name="leftbrackets">(</string>
+    <string name="rightbrackets">)</string>
+
+    <!--搜索-->
+    <string name="search_title">搜索</string>
+    <string name="search_et_hint">输入文字首字母进行搜索</string>
+    <string name="search_result_title">搜索结果</string>
+    <string name="search_commend">推荐</string>
+    <string name="search_all_result">共%1$d条结果</string>
+    <string name="search_actor">演员:%1$s</string>
+    <string name="search_type">类型:%1$s</string>
+    <string name="keyword">%1$s-%2$s-%3$s-%4$s-%5$s-%6$s-%7$s</string>
+
+    <!--专题-->
+    <string name="subject">专题</string>
+    <string name="director">导演：</string>
+    <string name="actors">演员：</string>
+    <string name="labels">类型：</string>
+    <string name="desc">简介：</string>
+    <!--语音结果-->
+    <string name="voice_title">搜索结果</string>
+
+    <!-- 试看提示 -->
+    <string name="free_see_msg">试看结束,是否立即购买</string>
+
+    <!-- 付费页面 -->
+    <string name="payinfo_tv_info">购买影片: &#160;</string>
+    <string name="payinfo_tv_user">当前账户: &#160;</string>
+    <string name="payinfo_tv_title">产品中心</string>
+    <string name="payinfo_tv_rmb">¥&#160;</string>
+    <string name="payinfo_tv_tip">温馨提示: 单次购买的影片观影时限为24小时,请在此时间段内完成观看!</string>
+    <string name="pop_time_init">00:00</string>
+    <string name="play_time_init">00:00:00</string>
+
+    <!-- 影视排行榜 -->
+    <string name="chart_title">影视-排行榜</string>
+    <string name="chart_flag_name">排行榜</string>
+
+    <!-- 全部频道 -->
+    <string name="allchannel_tv_title">全部频道</string>
+
+</resources>

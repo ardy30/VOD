@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/search_root"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.ppfuns.vod.activity.SearchActivity">
+
+    <com.ppfuns.ui.view.SmoothHorizontalScrollView
+        android:id="@+id/search_scrollview"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:scrollbars="none">
+        <!--左边键盘-->
+        <com.ppfuns.ui.view.layout.RelativeMainLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <FrameLayout
+                android:id="@+id/ll_key"
+                android:layout_width="@dimen/search_keyboard_width"
+                android:layout_height="match_parent"/>
+
+            <View
+                android:id="@+id/search_line"
+                android:layout_width="@dimen/search_line"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/ll_key"
+                android:background="@drawable/line_s"/>
+
+            <!--检索结果-->
+            <FrameLayout
+                android:id="@+id/search_fl_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/search_line"/>
+
+
+        </com.ppfuns.ui.view.layout.RelativeMainLayout>
+
+    </com.ppfuns.ui.view.SmoothHorizontalScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_up_right"
+        android:layout_width="@dimen/search_gird_poster_item_child_width"
+        android:layout_height="@dimen/search_gird_poster_item_child_iv_height"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/search_rl_focus_view_mtop"
+        android:layout_marginRight="@dimen/search_rl_focus_view_mright1"
+        android:focusable="false"
+        android:background="@color/blue"
+        android:focusableInTouchMode="false"
+        android:visibility="invisible"></RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_up_left"
+        android:layout_width="@dimen/search_gird_poster_item_child_width"
+        android:layout_height="@dimen/search_gird_poster_item_child_iv_height"
+        android:layout_alignTop="@id/rl_up_right"
+        android:layout_toLeftOf="@id/rl_up_right"
+        android:layout_marginRight="@dimen/search_rl_focus_view_mright"
+        android:focusable="false"
+        android:background="@color/yellow"
+        android:focusableInTouchMode="false"
+        android:visibility="invisible"></RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom_right"
+        android:layout_width="@dimen/search_gird_poster_item_child_width"
+        android:layout_height="@dimen/search_gird_poster_item_child_iv_height"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/search_gird_poster_item_child_mtop"
+        android:layout_alignLeft="@id/rl_up_right"
+        android:focusable="false"
+        android:background="@color/blue"
+        android:focusableInTouchMode="false"
+        android:visibility="invisible"></RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom_left"
+        android:layout_width="@dimen/search_gird_poster_item_child_width"
+        android:layout_height="@dimen/search_gird_poster_item_child_iv_height"
+        android:layout_alignTop="@id/rl_bottom_right"
+        android:layout_alignLeft="@id/rl_up_left"
+        android:background="@color/yellow"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:visibility="invisible"></RelativeLayout>
+
+    <com.ppfuns.ui.view.MainUpView
+        android:id="@+id/search_mainupview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

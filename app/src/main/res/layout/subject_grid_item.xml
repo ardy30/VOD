@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="false">
+
+    <TextView
+        android:id="@+id/subjectName"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/twoWayGridView_item_subjectName_height"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:focusable="false"
+        android:text="谍战"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/twoWayGridView_item_subjectName_textSize"
+        android:maxLength="10"/>
+
+    <RelativeLayout
+        android:id="@+id/img_layout"
+        android:layout_width="@dimen/twoWayGridView_item_width"
+        android:layout_height="@dimen/twoWayGridView_item_height"
+        android:layout_marginBottom="@dimen/twoWayGridView_item_marginBottom"
+        android:layout_above="@id/subjectName"
+        android:layout_centerHorizontal="true">
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="@dimen/twoWayGridView_item_width"
+            android:layout_height="@dimen/twoWayGridView_item_height"
+            android:layout_centerInParent="true"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/ex"/>
+<!--
+        <com.ppfuns.ui.view.LabelView xmlns:lv="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tips"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            lv:lv_background_color="#ff3c00"
+            lv:lv_fill_triangle="true"
+            lv:lv_gravity="TOP_LEFT"
+            lv:lv_text="专题"
+            lv:lv_text_size="16sp" />-->
+        <ImageView
+            android:id="@+id/img_tip"
+            android:layout_width="@dimen/twoWayGridView_item_subjectName_tips_height"
+            android:layout_height="@dimen/twoWayGridView_item_subjectName_tips_height"
+            android:scaleType="fitXY"
+            android:src="@drawable/zhuanti"/>
+    </RelativeLayout>
+
+</RelativeLayout>
+
+

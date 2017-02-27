@@ -1,0 +1,261 @@
+package com.ppfuns.vod.activity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.ppfuns.model.entity.PayAlbum;
+import com.ppfuns.model.entity.PayInfo;
+import com.ppfuns.util.LogUtils;
+import com.ppfuns.util.SysUtils;
+import com.ppfuns.util.ToastUtils;
+import com.ppfuns.util.eventbus.EventBusUtil;
+import com.ppfuns.util.eventbus.EventConf;
+import com.ppfuns.util.eventbus.InfoEvent;
+import com.ppfuns.vod.R;
+
+import org.greenrobot.eventbus.Subscribe;
+
+import java.text.NumberFormat;
+import java.util.HashMap;
+import java.util.List;
+
+public class PayInfoActivity extends BaseActivity implements View.OnClickListener{
+
+    private final String TAG = PayInfo.class.getSimpleName();
+    private final String PAY_ACTION = "com.ppfuns.pay.action.RECORD_BILL";
+    private final String PAY_COLUMN_ACTION = "com.ppfuns.pay.action.PAY_COLUMN";
+    public static String PAY_INFO_KEY = "payInfo";
+    private final int PAY_REQUEST_KEY = 11111;
+    private final int PAY_RESULT_KEY = 22222;
+
+    private Button mBtnPay;
+    private Button mBtnCancel;
+    private TextView mTvInfo;
+    private TextView mTvPrice;
+    private TextView mTvUser;
+
+    private PayInfo mPayInfo;
+    private List<PayInfo> mPayInfos;
+    private boolean mIsAuthority = false;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_pay_info);
+        EventBusUtil.register(this);
+
+//        initView();
+        initData();
+    }
+
+    private void initView() {
+        mBtnPay = (Button) findViewById(R.id.btn_pay);
+        mBtnCancel = (Button) findViewById(R.id.btn_cancel);
+        mTvInfo = (TextView) findViewById(R.id.tv_info);
+        mTvPrice = (TextView) findViewById(R.id.tv_price);
+        mTvUser = (TextView) findViewById(R.id.tv_user);
+
+        mBtnPay.requestFocus();
+        mBtnPay.setOnClickListener(this);
+        mBtnCancel.setOnClickListener(this);
+    }
+
+    private void initData() {
+        Intent intent = getIntent();
+        if (intent != null) {
+            try {
+                mPayInfos = (List<PayInfo>) intent.getSerializableExtra(PAY_INFO_KEY);
+                startPay();
+//                updateUI();
+            } catch (ClassCastException e) {
+                LogUtils.i(TAG, e.toString());
+            }
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LogUtils.d(TAG, "onPause");
+    }
+
+    private void updateUI() {
+        if (mPayInfo == null) {
+            return;
+        }
+        String cashAmt = format(mPayInfo.cashAmt);
+//        Float cashAmt = Float.valueOf(mPayInfo.cashAmt);
+        String videoName = mPayInfo.videoName;
+        int userId = SysUtils.getUserId();
+        mTvInfo.setText(getString(R.string.payinfo_tv_info) + videoName);
+        mTvPrice.setText(getString(R.string.payinfo_tv_rmb) + cashAmt);
+        mTvUser.setText(getString(R.string.payinfo_tv_user) + userId);
+    }
+
+    private String format(String number) {
+        String cashAmt = "0.00";
+        if (TextUtils.isEmpty(number) || TextUtils.equals(cashAmt, number)) {
+            return cashAmt;
+        }
+        NumberFormat numberFormat = NumberFormat.getNumberInstance();
+        numberFormat.setMaximumFractionDigits(2);
+        numberFormat.setMinimumFractionDigits(2);
+        try {
+            cashAmt = numberFormat.format(Float.valueOf(number));
+        } catch (Exception e) {
+            LogUtils.e(TAG, e.toString());
+        }
+        LogUtils.d(TAG, "format: " + cashAmt);
+        return cashAmt;
+    }
+
+    private void startPay() {
+        LogUtils.i(TAG, "startPay");
+        if (mPayInfos == null || mPayInfos.size() <= 0) {
+            ToastUtils.showShort(this, getString(R.string.authority_data_error));
+            return;
+        }
+        int size = mPayInfos.size();
+        boolean isPayColumn = false;
+        for (int i = 0; i < size; i++) {
+            PayInfo payInfo = mPayInfos.get(i);
+            if (payInfo != null) {
+                String chargingType = payInfo.chargingType;
+                if (!TextUtils.isEmpty(chargingType) && 2001 == Integer.valueOf(chargingType)) {
+                    isPayColumn = true;
+                    break;
+                }
+            }
+        }
+
+        if (isPayColumn) {
+            //专区付费
+            String payInfosString = new Gson().toJson(mPayInfos).toString();
+            payColumn(payInfosString);
+        } else {
+            PayInfo payInfo = mPayInfos.get(0);
+            payAlbum(payInfo);
+        }
+    }
+
+    private void payColumn(String data) {
+        if (TextUtils.isEmpty(data)) {
+            return;
+        }
+        Bundle bundle = new Bundle();
+        bundle.putString("pay_info", data);
+        Intent intent = new Intent();
+        intent.setAction(PAY_COLUMN_ACTION);
+        intent.putExtras(bundle);
+        intent.putExtra("isShowBg", false);
+        startActivityForResult(intent, PAY_REQUEST_KEY);
+    }
+
+    private void payAlbum(PayInfo payInfo) {
+        LogUtils.i(TAG, "payAlbum");
+        if (payInfo == null || TextUtils.isEmpty(payInfo.partnerId)) {
+            ToastUtils.showShort(this, getString(R.string.authority_data_error));
+            return;
+        }
+
+        if (payInfo == null || TextUtils.isEmpty(payInfo.partnerId)) {
+            ToastUtils.showShort(this, getString(R.string.data_error));
+            return;
+        }
+        float cashAmt = Float.valueOf(payInfo.cashAmt);
+        cashAmt = cashAmt * 100;
+        Bundle bundle = new Bundle();
+        HashMap<String, String> appendAttr = new HashMap<>();
+        appendAttr.put("showUrl", "http://192.168.1.11:8003");
+        bundle.putInt("cashAmt", (int)cashAmt);
+        bundle.putFloat("cashRechargeAmt", cashAmt);
+        bundle.putFloat("mlAmt", Float.valueOf(payInfo.mlAmt));
+        bundle.putString("partnerId", payInfo.partnerId);
+        bundle.putString("partnerKey", payInfo.partnerKey);
+        bundle.putString("productSerial", payInfo.productSerial);
+        bundle.putString("chargingId", payInfo.chargingId);
+        LogUtils.i("Decode", "chargingId: " + payInfo.chargingId);
+        bundle.putString("chargingName", payInfo.chargingName);
+        bundle.putString("chargingType", payInfo.chargingType);
+        bundle.putFloat("chargingPrice", Float.valueOf(payInfo.chargingPrice));
+        bundle.putInt("chargingDuration", Integer.valueOf(payInfo.chargingDuration));
+        bundle.putInt("chargingDegree", Integer.valueOf(payInfo.chargingDegree));
+        bundle.putSerializable("appendAttr", appendAttr);
+
+        Intent intent = new Intent();
+        intent.setAction(PAY_ACTION);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.putExtras(bundle);
+        intent.putExtra("isShowBg", false);
+        startActivityForResult(intent, PAY_REQUEST_KEY);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        LogUtils.d("Decode", "requestCode: " + requestCode + ", resultCode: " + resultCode);
+        if (PAY_REQUEST_KEY == requestCode && PAY_RESULT_KEY == resultCode && data != null) {
+            String payResult = data.getExtras().getString("result");
+            LogUtils.d("Decode", "payResult: " + payResult);
+            if (!TextUtils.isEmpty(payResult)) {
+                PayAlbum payAlbum = new Gson().fromJson(payResult, new TypeToken<PayAlbum>() {
+                }.getType());
+                if (payAlbum != null) {
+                    String payCode = payAlbum.resultCode;
+                    if (TextUtils.equals(payCode, "0000")) {
+//                        mBtnPay.setText(getString(R.string.tips_confirm));
+//                        mIsAuthority = true;
+//                        mBtnCancel.setVisibility(View.GONE);
+                        EventBusUtil.postInfoEvent(EventConf.SENO_MESSAGE_BY_PAY_INFO, Boolean.valueOf(true));
+                    }
+//                    String payMsg = payAlbum.resultMsg;
+//                    ToastUtils.showLong(PayInfoActivity.this, payMsg);
+                }
+            }
+//            else {
+//                ToastUtils.showLong(PayInfoActivity.this, getString(R.string.pay_failed));
+//            }
+        }
+        finish();
+    }
+
+    @Subscribe
+    public void subscribe(InfoEvent infoEvent) {
+
+    }
+
+    @Override
+    protected void onStop() {
+        LogUtils.d(TAG, "onStop");
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBusUtil.unregister(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        switch (id) {
+            case R.id.btn_pay:
+                if (!mIsAuthority) {
+                    startPay();
+                    return;
+                }
+                PayInfoActivity.this.finish();
+                break;
+            case R.id.btn_cancel:
+                finish();
+                break;
+        }
+    }
+}

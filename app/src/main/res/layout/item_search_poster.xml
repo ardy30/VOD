@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/item_search_gv_root"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="@dimen/search_gird_poster_item_width"
+                android:layout_height="@dimen/search_gird_poster_item_height"
+                android:layout_marginRight="@dimen/search_gird_poster_item_line_mright"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+    <RelativeLayout
+        android:id="@+id/search_rl_content"
+        android:layout_width="@dimen/search_gird_poster_item_child_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/search_gird_poster_item_child_mtop"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <ImageView
+            android:id="@+id/item_search_lv_iv"
+            android:layout_width="@dimen/search_gird_poster_item_child_iv_width"
+            android:layout_height="@dimen/search_gird_poster_item_child_iv_height"
+            android:focusable="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/search_default_195x260"
+            />
+
+        <com.ppfuns.ui.view.AlwaysMarqueeTextView
+            android:id="@+id/item_search_lv_tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/search_gird_poster_item_child_title_mleft"
+            android:layout_marginTop="@dimen/search_gird_poster_item_child_title_mtop"
+            android:layout_toRightOf="@id/item_search_lv_iv"
+            android:ellipsize="marquee"
+            android:focusable="false"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/search_gird_poster_item_child_title_textSize"/>
+
+        <TextView
+            android:id="@+id/item_search_lv_tv_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_search_lv_tv_title"
+            android:layout_marginLeft="@dimen/search_gird_poster_item_child_info_mleft"
+            android:layout_marginTop="@dimen/search_gird_poster_item_child_info_mtop"
+            android:layout_toRightOf="@id/item_search_lv_iv"
+            android:ellipsize="end"
+            android:focusable="false"
+            android:includeFontPadding="false"
+            android:maxEms="6"
+            android:singleLine="true"
+            android:textColor="#88ffffff"
+            android:textSize="@dimen/search_gird_poster_item_child_info_textSize"/>
+
+        <TextView
+            android:id="@+id/item_search_lv_tv_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_search_lv_tv_info"
+            android:layout_marginLeft="@dimen/search_gird_poster_item_child_type_mleft"
+            android:layout_marginTop="@dimen/search_gird_poster_item_child_type_mtop"
+            android:layout_toRightOf="@id/item_search_lv_iv"
+            android:ellipsize="end"
+            android:focusable="false"
+            android:includeFontPadding="false"
+            android:maxEms="6"
+            android:singleLine="true"
+            android:textColor="#88ffffff"
+            android:textSize="@dimen/search_gird_poster_item_child_type_textSize"/>
+        <!--<View-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="2px"-->
+        <!--android:background="@drawable/line_h"-->
+        <!--/>-->
+    </RelativeLayout>
+
+    <View
+        android:layout_width="@dimen/search_gird_poster_item_line_width"
+        android:layout_height="@dimen/search_gird_poster_item_line_height"
+        android:layout_alignParentBottom="true"
+
+        android:background="@drawable/line_h"/>
+
+
+</RelativeLayout>

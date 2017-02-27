@@ -1,0 +1,4 @@
+<resources>
+<string name="play_with_activity">play with activity</string>
+<string name="play_with_fragment">play with fragment</string>
+</resources>

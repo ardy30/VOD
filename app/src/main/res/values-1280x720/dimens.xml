@@ -1,0 +1,537 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <!-- 专辑详情页 -->
+    <dimen name="album_content_pleft">92.67px</dimen>
+    <dimen name="album_up_content_height">464px</dimen>
+    <dimen name="album_up_content_pleft">40px</dimen>
+    <dimen name="album_up_content_pright">40px</dimen>
+    <dimen name="album_up_content_ptop">72.67px</dimen>
+    <dimen name="album_iv_width">256.67px</dimen>
+    <dimen name="album_iv_height">343.33px</dimen>
+    <dimen name="album_iv_mright">37.33px</dimen>
+    <dimen name="album_iv_mbottom">28px</dimen>
+    <dimen name="album_rv_name">53.33px</dimen>
+    <dimen name="album_tv_drawable_padding">14.67px</dimen>
+    <dimen name="album_tv_name">46.67px</dimen>
+    <dimen name="album_tv_name_mright">20px</dimen>
+    <dimen name="album_tv_time">32px</dimen>
+    <dimen name="album_tv_type">20px</dimen>
+    <dimen name="album_tv_mark">20px</dimen>
+    <dimen name="album_tv_score_mleft">6.67px</dimen>
+    <dimen name="album_tv_score">40px</dimen>
+    <dimen name="album_tv_introduction">16px</dimen>
+    <dimen name="album_tv_introduction_width">733px</dimen>
+    <dimen name="album_tv_introduction_height">120px</dimen>
+    <dimen name="album_tv_mbottom">10px</dimen>
+    <dimen name="album_btn_width">172px</dimen>
+    <dimen name="album_btn_height">101.33px</dimen>
+    <dimen name="album_btn_mright">28px</dimen>
+    <dimen name="album_btn_mleft">-20px</dimen>
+    <dimen name="album_btn_size">26.67px</dimen>
+    <dimen name="album_tv_tip_mbottom">16.67px</dimen>
+    <dimen name="album_recommend_iv_width">161px</dimen>
+    <dimen name="album_recommend_iv_height">171.33px</dimen>
+    <dimen name="album_recommend_tv_mbottom">16px</dimen>
+    <dimen name="album_recommend_tv_mleft">26.67px</dimen>
+    <dimen name="album_recommend_tv_size">18.67px</dimen>
+    <dimen name="album_recommend_mright">33px</dimen>
+    <dimen name="album_recommend_frame_height">46.67px</dimen>
+    <dimen name="album_tv_linespace">10px</dimen>
+    <dimen name="album_tv_time_mright">200px</dimen>
+    <dimen name="album_recyclerview_width">1127px</dimen>
+    <dimen name="album_recyclerview_mbottom">63.33px</dimen>
+    <dimen name="album_rl_episode_mbottom">77.33px</dimen>
+    <dimen name="album_rl_episode_mleft">20px</dimen>
+    <dimen name="album_rv_title_height">60px</dimen>
+    <dimen name="album_rv_content_height">73.33px</dimen>
+    <dimen name="album_rv_content_pleft">34px</dimen>
+    <dimen name="album_rv_content_mtop">20px</dimen>
+    <dimen name="item_title_content_width">92.67px</dimen>
+    <dimen name="item_title_content_mright">96px</dimen>
+    <dimen name="item_title_focus_size">32px</dimen>
+    <dimen name="item_title_normal_size">26.67px</dimen>
+    <dimen name="item_tv_episode_width">67px</dimen>
+    <dimen name="item_tv_episode_size">26.67px</dimen>
+    <dimen name="item_mianupview_pleft">40.67px</dimen>
+    <dimen name="item_mianupview_pright">9.33px</dimen>
+    <dimen name="item_eposide_padding">28px</dimen>
+    <dimen name="item_mianupview_ptop">40px</dimen>
+    <dimen name="introduction_focus_padding">46px</dimen>
+
+    <!--主页-->
+    <!--主页标题部分-->
+    <dimen name="main_title_logo_width">52px</dimen>
+    <dimen name="main_title_logo_height">44px</dimen>
+    <dimen name="main_title_mLeft">64.67px</dimen>
+
+    <dimen name="main_title_mTop">52.67px</dimen>
+
+    <dimen name="main_title_tv_name">40px</dimen>
+
+    <dimen name="main_title_ll_pRight">64.67px</dimen>
+
+    <dimen name="main_title_iv_width">24px</dimen>
+    <dimen name="main_title_iv_height">24px</dimen>
+    <dimen name="main_title_tv_time_size">20px</dimen>
+
+    <dimen name="main_title_diving_width">1.34px</dimen>
+    <dimen name="main_title_diving_height">24px</dimen>
+    <dimen name="main_title_diving_mleft">6.67px</dimen>
+    <dimen name="main_title_diving_mright">6.67px</dimen>
+
+    <!--主页内容部分-->
+    <dimen name="main_content_mleft">66.67px</dimen>
+    <dimen name="main_content_mright">60px</dimen>
+    <dimen name="main_content_mtop">56px</dimen>
+
+    <dimen name="main_content_tv_size">24px</dimen>
+    <dimen name="main_content_down_tv_size">18px</dimen>
+    <dimen name="main_content_tv_mleft">13.33px</dimen>
+    <dimen name="main_content_tv_mbottom">13.33px</dimen>
+    <dimen name="main_content_tv_title_mbottom">30px</dimen>
+    <dimen name="main_content_up_tv_mbottom">-10px</dimen>
+
+    <dimen name="main_content_item_margin">6.67px</dimen>
+
+    <dimen name="main_content_item_rv_width">160px</dimen>
+    <dimen name="main_content_rv_height">468px</dimen>
+
+    <dimen name="main_content_item_rv_text_width">140px</dimen>
+    <dimen name="main_content_item_rv_height">149.33px</dimen>
+
+    <dimen name="main_content_rl_hottvplay_width">280px</dimen>
+    <dimen name="main_content_rl_hottvplay_height">461.33px</dimen>
+
+
+
+    <dimen name="main_content_rl_hotmovie_width">486.67px</dimen>
+    <dimen name="main_content_rl_hotmovie_height">305.33px</dimen>
+
+
+    <dimen name="main_content_rl_animation_width">240px</dimen>
+    <dimen name="main_content_rl_animation_height">149.33px</dimen>
+    <dimen name="main_content_rl_variety_width">240px</dimen>
+    <dimen name="main_content_rl_variety_height">149.33px</dimen>
+
+    <dimen name="main_content_rl_sports_width">240px</dimen>
+    <dimen name="main_content_rl_sports_height">149.33px</dimen>
+
+    <dimen name="main_content_rl_special_width">240px</dimen>
+    <dimen name="main_content_rl_special_height">305.33px</dimen>
+
+    <dimen name="main_content_rl_pxorts_width">240px</dimen>
+    <dimen name="main_content_rl_pxorts_height">149.33px</dimen>
+
+    <dimen name="main_content_rl_pxecial_width">240px</dimen>
+    <dimen name="main_content_rl_pxecial_height">305.33px</dimen>
+    <dimen name="main_content_mas_height">53.33px</dimen>
+
+    <dimen name="player_btn_pause_play_width">66.6px</dimen>
+    <dimen name="player_btn_pause_play_hight">66.6px</dimen>
+    <dimen name="player_seekbar_max_hight">8.6px</dimen>
+    <dimen name="player_seekbar_padding_left">10.6px</dimen>
+    <dimen name="player_seekbar_padding_right">0px</dimen>
+    <dimen name="player_time_text_size">17.3px</dimen>
+    <dimen name="player_title_margin_left">10.6px</dimen>
+    <dimen name="player_title_textsize">20px</dimen>
+    <dimen name="player_info_textsize">26.6px</dimen>
+    <dimen name="player_ctrl_padding_left">62.6px</dimen>
+    <dimen name="player_ctrl_padding_right">62.6px</dimen>
+    <dimen name="player_ctrl_height">194px</dimen>
+    <dimen name="player_loading_width">66.67px</dimen>
+    <dimen name="player_loading_height">66.67px</dimen>
+
+    <!--切换域名-->
+    <dimen name="menu_tv_size">30px</dimen>
+
+    <!--搜索界面-->
+    <!--输入框-->
+    <dimen name="search_et_icon_width">33.333333px</dimen>
+    <dimen name="search_et_icon_height">34px</dimen>
+    <dimen name="search_et_content_mtop">7.333333333px</dimen>
+
+
+    <!--字母大小-->
+    <dimen name="search_keyborad_textSize">32px</dimen>
+    <dimen name="key_size">35px</dimen>
+    <dimen name="key_left_padding">28px</dimen>
+    <dimen name="key_top_padding">20px</dimen>
+
+    <!--数字大小-->
+    <dimen name="search_keyborad_numberSize">48px</dimen>
+    <dimen name="search_keyborad_padding">33.33333px</dimen>
+    <dimen name="number_key_top_padding">6px</dimen>
+    <dimen name="number_key_left_padding">26.5px</dimen>
+
+    <dimen name="number_key_size">80px</dimen>
+    <dimen name="number0_left_padding">133.666666px</dimen>
+
+
+    <!--搜索左侧键盘-->
+    <dimen name="search_keyboard_width">436.66667px</dimen>
+    <dimen name="search_keyboard_m_top">5px</dimen>
+
+    <dimen name="search_keyboard_title_mleft">60px</dimen>
+    <dimen name="search_keyboard_title_mtop">41.333333px</dimen>
+    <dimen name="search_keyboard_title_textSize">40px</dimen>
+
+    <dimen name="search_keyboard_et_width">344.666667px</dimen>
+    <dimen name="search_keyboard_et_height">66px</dimen>
+    <dimen name="search_keyboard_et_mleft">60px</dimen>
+    <dimen name="search_keyboard_et_mtop">34px</dimen>
+    <dimen name="search_keyboard_et_padding">10.666667px</dimen>
+    <dimen name="search_keyboard_et_pleft">15.33333px</dimen>
+    <dimen name="search_keyboard_et_textSize">20px</dimen>
+
+    <dimen name="search_keyboard_skb_width">344.666667px</dimen>
+    <dimen name="search_keyboard_skb_height">358px</dimen>
+    <dimen name="search_keyboard_skb_mleft">60px</dimen>
+    <dimen name="search_keyboard_skb_mtop">16.6666667px</dimen>
+
+    <dimen name="search_keyboard_menu_width">344.666667px</dimen>
+    <dimen name="search_keyboard_menu_height">66px</dimen>
+    <dimen name="search_keyboard_menu_mleft">60px</dimen>
+    <dimen name="search_keyboard_menu_mtop">32.6666667px</dimen>
+
+    <dimen name="search_keyboard_menu_number_width">37.3333px</dimen>
+    <dimen name="search_keyboard_menu_number_height">17.33333px</dimen>
+    <dimen name="search_keyboard_menu_number_mleft">53.33333px</dimen>
+
+    <dimen name="search_keyboard_menu_delete_width">21.333333px</dimen>
+    <dimen name="search_keyboard_menu_delete_height">21.333333px</dimen>
+    <dimen name="search_keyboard_menu_delete_mleft">74px</dimen>
+
+    <dimen name="search_keyboard_menu_back_width">24px</dimen>
+    <dimen name="search_keyboard_menu_back_height">16px</dimen>
+    <dimen name="search_keyboard_menu_back_mleft">80.66666667px</dimen>
+
+
+    <dimen name="search_line">1.333333px</dimen>
+
+    <!--搜索中间列表-->
+    <dimen name="search_list_width">453.333333px</dimen>
+
+    <dimen name="search_list_header_mbottom">60px</dimen>
+    <dimen name="search_list_header_mleft">48.666667px</dimen>
+    <dimen name="search_list_header_mright">48.666667px</dimen>
+    <dimen name="search_list_header_title_textSize">24px</dimen>
+    <dimen name="search_list_header_title_mtop">56.666667px</dimen>
+    <dimen name="search_list_header_count_mtop">60.6666667px</dimen>
+    <dimen name="search_list_header_count_textSize">20px</dimen>
+
+    <dimen name="search_list_center_width">368px</dimen>
+    <dimen name="search_list_center_height">513.333333px</dimen>
+    <dimen name="search_list_center_mbottom">60px</dimen>
+    <dimen name="search_list_center_mleft">38.66667px</dimen>
+    <dimen name="search_list_center_mright">38.66667px</dimen>
+
+    <dimen name="search_list_center_item_height">73.333333px</dimen>
+    <dimen name="search_list_center_item_line_height">1.333333px</dimen>
+
+    <dimen name="search_list_center_item_seq_textSize">24px</dimen>
+    <dimen name="search_list_center_item_seq_mtop">24.6667px</dimen>
+
+    <dimen name="search_list_center_item_name_textSize">24px</dimen>
+    <dimen name="search_list_center_item_name_width">210px</dimen>
+    <dimen name="search_list_center_item_name_mleft">17.33333px</dimen>
+    <dimen name="search_list_center_item_name_mright">24px</dimen>
+
+    <dimen name="search_list_center_item_type_textSize">21.33333px</dimen>
+    <dimen name="search_list_center_item_line_mtop">24px</dimen>
+
+
+    <dimen name="search_gird_poster_mleft">43.333333px</dimen>
+    <dimen name="search_gird_poster_mright">21.333333px</dimen>
+    <dimen name="search_gird_poster_mtop">21.333333px</dimen>
+
+
+    <dimen name="search_gird_poster_item_width">373.333333px</dimen>
+    <dimen name="search_gird_poster_item_height">220px</dimen>
+
+    <dimen name="search_gird_poster_item_child_width">352.666667px</dimen>
+    <dimen name="search_gird_poster_item_child_mtop">22.666667px</dimen>
+
+    <dimen name="search_gird_poster_item_child_iv_width">130px</dimen>
+    <dimen name="search_gird_poster_item_child_iv_height">173.33333px</dimen>
+
+    <dimen name="search_gird_poster_item_child_title_mleft">20px</dimen>
+    <dimen name="search_gird_poster_item_child_title_mtop">9.333333px</dimen>
+    <dimen name="search_gird_poster_item_child_title_textSize">30.66667px</dimen>
+
+    <dimen name="search_gird_poster_item_child_info_mleft">20px</dimen>
+    <dimen name="search_gird_poster_item_child_info_mtop">13.333333px</dimen>
+    <dimen name="search_gird_poster_item_child_info_textSize">20px</dimen>
+
+    <dimen name="search_gird_poster_item_child_type_mleft">20px</dimen>
+    <dimen name="search_gird_poster_item_child_type_mtop">13.333333px</dimen>
+    <dimen name="search_gird_poster_item_child_type_textSize">20px</dimen>
+
+
+    <dimen name="search_gird_poster_item_line_width">352.666667px</dimen>
+    <dimen name="search_gird_poster_item_line_height">1.333333px</dimen>
+    <dimen name="search_gird_poster_item_line_mright">23.333333px</dimen>
+    <dimen name="search_gird_poster_item_line_mtop">22.666667px</dimen>
+
+    <dimen name="search_mainupview_small_padding">35px</dimen>
+    <dimen name="search_mainupview_big_padding">45px</dimen>
+
+    <dimen name="search_rl_focus_view_mtop">44px</dimen>
+    <dimen name="search_rl_focus_view_mright1">41.33px</dimen>
+    <dimen name="search_rl_focus_view_mright">20px</dimen>
+
+    <!--频道分类-->
+    <dimen name="layout_mtop">6px</dimen>
+    <dimen name="menlistview_mtop">86.6666px</dimen>
+    <dimen name="allow_width">29.3333px</dimen>
+    <dimen name="allow_height">21.3333px</dimen>
+    <dimen name="allow_marbuttom">53.33333px</dimen>
+    <dimen name="listview_driver">1dp</dimen>
+    <dimen name="layout_marleft">23.3333px</dimen>
+    <dimen name="layout_marright">46.666px</dimen>
+    <dimen name="grid_marrbuttom">43.33333px</dimen>
+    <dimen name="grid_verticalspacing">44px</dimen>
+    <dimen name="grid_horizontalspacing">23.333px</dimen>
+    <dimen name="circularprogress_width">33.3333px</dimen>
+    <dimen name="circularprogress_height">33.3333px</dimen>
+    <dimen name="circularprogress_borderwidth">4dp</dimen>
+    <dimen name="header_layout_height">126.666px</dimen>
+    <dimen name="text_marleft">53.333px</dimen>
+    <dimen name="text_martop">41.333px</dimen>
+    <dimen name="channelname_textsize">40px</dimen>
+    <dimen name="text_marleft2">21.333px</dimen>
+    <dimen name="text_martop2">46.666px</dimen>
+    <dimen name="channelcategoryname_textsize">32px</dimen>
+    <dimen name="text_marleft3">53.333px</dimen>
+    <dimen name="text_martop3">6.666px</dimen>
+    <dimen name="album_textsize">20px</dimen>
+    <dimen name="text_marbuttom">9.333px</dimen>
+    <dimen name="text_marright">53.333px</dimen>
+    <dimen name="text_marbuttom2">2.666px</dimen>
+    <dimen name="channel_list_item_textsize">21.333px</dimen>
+    <dimen name="channel_layout_padding">20px</dimen>
+    <dimen name="album_width">180px</dimen>
+    <dimen name="album_height">240px</dimen>
+    <dimen name="img_tip_width">80px</dimen>
+    <dimen name="img_tip_height">80px</dimen>
+    <dimen name="filmeName_paddingleft">9.333px</dimen>
+    <dimen name="filmeName_paddingright">40px</dimen>
+    <dimen name="filmeName_paddingbottom">9.333px</dimen>
+    <dimen name="score_marright">6.666px</dimen>
+    <dimen name="score_paddingbottom">9.333px</dimen>
+    <dimen name="score_textsize">17.333px</dimen>
+    <dimen name="subject_category_layout_headerheight">93.333px</dimen>
+    <dimen name="pageIndex2_marginBottom">3.333px</dimen>
+    <dimen name="pageIndex2_marginRight">80px</dimen>
+    <dimen name="go_left_width">16.666px</dimen>
+    <dimen name="go_left_height">52px</dimen>
+    <dimen name="go_left_marginLeft">19.333px</dimen>
+    <dimen name="go_left_marginRight">23.333px</dimen>
+    <dimen name="twoWayGridView_marginBottom">26.666px</dimen>
+    <dimen name="twoWayGridView_marginLeft">10dp</dimen>
+    <dimen name="twoWayGridView_columnWidth">360px</dimen>
+    <dimen name="twoWayGridView_horizontalSpacing">35.333px</dimen>
+    <dimen name="twoWayGridView_rowHeight">280px</dimen>
+    <dimen name="twoWayGridView_verticalSpacing">0dp</dimen>
+    <dimen name="twoWayGridView_item_width">360px</dimen>
+    <dimen name="twoWayGridView_item_height">240px</dimen>
+    <dimen name="twoWayGridView_item_marginBottom">13.3px</dimen>
+    <dimen name="twoWayGridView_item_subjectName_height">26.7px</dimen>
+    <dimen name="twoWayGridView_item_subjectName_textSize">20px</dimen>
+    <dimen name="twoWayGridView_item_subjectName_tips_height">60px</dimen>
+    <dimen name="twoWayGridView_map_bottom">-14px</dimen>
+    <dimen name="channel_map_apd">33.333px</dimen>
+    <dimen name="subject_scrolldestance">800px</dimen>
+    <dimen name="category_gridview_scrollx">284px</dimen>
+    <dimen name="category_gridview_animator_down">601px</dimen>
+    <dimen name="category_gridview_animator_up">317px</dimen>
+    <dimen name="listview1_selectionTop">210px</dimen>
+    <dimen name="btn_search_width">214.67px</dimen>
+    <dimen name="btn_search_height">69.33px</dimen>
+    <dimen name="focus_padding">24px</dimen>
+
+    <!--专题详情-->
+    <dimen name="subject_detail_ll_width">456.67px</dimen>
+    <dimen name="subject_detail_ll_mtop">66.67px</dimen>
+    <dimen name="subject_detail_ll_mleft">66.67px</dimen>
+    <dimen name="subject_detail_sname_size">40px</dimen>
+    <dimen name="subject_detail_items_size">20px</dimen>
+    <dimen name="subject_detail_sdes_mtop">46.67px</dimen>
+    <dimen name="subject_detail_sdes1_size">18.67px</dimen>
+    <dimen name="subject_detail_score_mright">20px</dimen>
+    <dimen name="subject_detail_score_size">24px</dimen>
+    <dimen name="subject_detail_filmdes_size">16px</dimen>
+    <dimen name="subject_detail_filmdes_mtop">10px</dimen>
+    <dimen name="subject_detail_filmdes_mbottom">66.67px</dimen>
+    <dimen name="subject_detail_iv_vodplay_mleft">10px</dimen>
+    <dimen name="subject_detail_iv_width">60px</dimen>
+    <dimen name="subject_detail_iv_height">60px</dimen>
+    <dimen name="subject_detail_iv_mtop">95.33px</dimen>
+    <dimen name="subject_detail_iv_mleft">2px</dimen>
+    <dimen name="subject_detail_iv_faus_mleft">510.67px</dimen>
+    <dimen name="subject_detail_iv_faus_width">435.33px</dimen>
+    <dimen name="subject_detail_iv_faus_height">565.33px</dimen>
+    <dimen name="subject_detail_content_width">390px</dimen>
+    <dimen name="subject_detail_content_height">520px</dimen>
+    <dimen name="subject_detail_left_one">173px</dimen>
+    <dimen name="subject_detail_left_two">323px</dimen>
+    <dimen name="subject_detail_left_three">483px</dimen>
+
+    <!--收藏记录-->
+    <dimen name="collect_detail_layout_marginTop">9.333333px</dimen>
+    <dimen name="collect_detail_dividerHeight">0.533333px</dimen>
+    <dimen name="collect_detail_layout_marginLeft">23.333333px</dimen>
+    <dimen name="collect_detail_layout_marginRight">46.666666px</dimen>
+    <dimen name="collect_detail_layout_marginBottom">33.3333333px</dimen>
+    <dimen name="collect_detail_relativeLayout_layout_marginTop">9.333333px</dimen>
+    <dimen name="verticalSpacing">44px</dimen>
+    <dimen name="horizontalSpacing">23.333px</dimen>
+    <dimen name="collect_detail_layout_width">33.333333px</dimen>
+    <dimen name="collect_detail_layout_height">33.333333px</dimen>
+    <dimen name="collect_detail_borderWidth">2.6666666px</dimen>
+    <dimen name="collect_detail_header_layout_marginBottom">9.333333px</dimen>
+    <dimen name="collect_detail_header_layout_marginRight">53.333333px</dimen>
+    <dimen name="collect_detail_text_marleft">53.33333px</dimen>
+    <dimen name="collect_detail_text_martop">41.3333px</dimen>
+    <dimen name="collect_detail_text_martop2">6.666666px</dimen>
+
+    <dimen name="collect_grid_item_album_width">240px</dimen>
+    <dimen name="collect_grid_item_img_tip_width">40px</dimen>
+    <dimen name="collect_grid_item_filmeName_paddingleft">9.333333px</dimen>
+    <dimen name="collect_grid_item_filmeName_paddingright">40px</dimen>
+    <dimen name="collect_grid_item_filmeName_paddingbottom">9.33333px</dimen>
+    <dimen name="collect_grid_item_album_textsize">20px</dimen>
+    <dimen name="collect_grid_item_score_marright">6.6666666px</dimen>
+    <dimen name="collect_grid_item_score_paddingbottom">9.33333px</dimen>
+    <dimen name="collect_grid_item_score_textsize">17.33333px</dimen>
+    <dimen name="collect_grid_item_play_status_mbottom">32px</dimen>
+    <dimen name="collect_grid_item_play_status_text_size">16px</dimen>
+
+    <dimen name="collect_header_layout_height">126.66666px</dimen>
+    <dimen name="collect_text_marleft">53.33333px</dimen>
+    <dimen name="collect_text_martop">41.33333px</dimen>
+    <dimen name="collect_textsize">40px</dimen>
+    <dimen name="collect_text_marleft2">21.33333px</dimen>
+    <dimen name="collect_text_martop2">46.66666px</dimen>
+    <dimen name="collect_channelcategoryname_textsize">32px</dimen>
+    <dimen name="collect_text_marleft3">53.33333px</dimen>
+    <dimen name="collect_text_martop3">6.6666666px</dimen>
+    <dimen name="collect_album_textsize">20px</dimen>
+    <dimen name="collect_text_marbuttom2">2.6666666px</dimen>
+
+
+    <dimen name="collect_list_item_layout_padding">20px</dimen>
+    <dimen name="collect_list_item_textsize">21.33333px</dimen>
+
+    <dimen name="left">27px</dimen>
+    <dimen name="top">27px</dimen>
+    <dimen name="right">27px</dimen>
+    <dimen name="bottom">27px</dimen>
+
+    <!--提示页-->
+    <dimen name="tipsdialog_main_width">633.33px</dimen>
+    <dimen name="tipsdialog_tv_ptop">41.33px</dimen>
+    <dimen name="tipsdialog_btn_width">172px</dimen>
+    <dimen name="tipsdialog_btn_height">101.33px</dimen>
+    <dimen name="tipsdialog_content_size">26.67px</dimen>
+
+    <!--试看提示页-->
+    <dimen name="free_see_img_width">133.33px</dimen>
+    <dimen name="free_see_img_height">133.33px</dimen>
+    <dimen name="free_see_img_mleft">29.33px</dimen>
+    <dimen name="free_see_msg_ptop">42.67px</dimen>
+    <dimen name="free_see_ll_mtop">42.67px</dimen>
+
+    <!--语音结果-->
+    <dimen name="voice_item_width">180px</dimen>
+    <dimen name="voice_item_mas_height">52.666667px</dimen>
+    <dimen name="voice_mainupwindow_padding">27px</dimen>
+
+    <!--广告-->
+    <dimen name="image_count_down_width">393.33px</dimen>
+    <dimen name="image_count_down_height">213.33px</dimen>
+    <dimen name="video_tv_width">185.33px</dimen>
+    <dimen name="video_tv_height">85.33px</dimen>
+    <dimen name="video_tv_mright">44px</dimen>
+    <dimen name="video_tv_mtop">45.33px</dimen>
+    <dimen name="video_tv_size">24px</dimen>
+
+    <!--播放页菜单-->
+    <dimen name="filter_main_height">369.33px</dimen>
+    <dimen name="filter_rv_title_height">153.33px</dimen>
+    <dimen name="filter_rv_title_lpad">89.33px</dimen>
+    <dimen name="filter_rv_title_tpad">77.33px</dimen>
+    <dimen name="filter_content_height">216px</dimen>
+    <dimen name="filter_rv_content_width">220px</dimen>
+    <dimen name="filter_item_height">66.67px</dimen>
+    <dimen name="filter_item_mbottom">6.67px</dimen>
+    <dimen name="filter_item_name_mleft">20px</dimen>
+    <dimen name="filter_item_name_size">30px</dimen>
+    <dimen name="filter_item_select_size">36px</dimen>
+    <dimen name="seekBar_height">20px</dimen>
+    <dimen name="seekBar_width">20px</dimen>
+
+    <dimen name="subject_destance1">400px</dimen>
+    <dimen name="subject_destance2">700px</dimen>
+    <dimen name="voiceplaylist_item_padding">15px</dimen>
+
+    <dimen name="vr_iv_cover_width">116px</dimen>
+    <dimen name="vr_iv_cover_height">20px</dimen>
+
+    <!--付费页面-->
+    <dimen name="payinfo_tv_title_size">33.33px</dimen>
+    <dimen name="payinfo_tv_title_mtop">40px</dimen>
+    <dimen name="payinfo_tv_title_mleft">58.67px</dimen>
+    <dimen name="payinfo_tv_user_size">22.67px</dimen>
+    <dimen name="payinfo_tv_user_mtop">53.33px</dimen>
+    <dimen name="payinfo_tv_user_mright">66.67px</dimen>
+    <dimen name="payinfo_rl_info_width">500px</dimen>
+    <dimen name="payinfo_rl_info_height">133.33px</dimen>
+    <dimen name="payinfo_rl_info_mtop">180px</dimen>
+    <dimen name="payinfo_tv_info_size">22.67px</dimen>
+    <dimen name="payinfo_tv_info_mtop">37.33px</dimen>
+    <dimen name="payinfo_tv_price_size">22.67px</dimen>
+    <dimen name="payinfo_tv_tip_top">389.33px</dimen>
+    <dimen name="payinfo_tv_tip_size">25.33px</dimen>
+    <dimen name="payinfo_ll_info_height">129.33px</dimen>
+    <dimen name="payinfo_ll_info_mbottom">88px</dimen>
+    <dimen name="payinfo_btn_width">295.71px</dimen>
+    <dimen name="payinfo_btn_mright">18.67px</dimen>
+    <dimen name="payinfo_btn_pleft">65.33px</dimen>
+    <dimen name="payinfo_btn_pright">64px</dimen>
+    <dimen name="payinfo_btn_size">30.67px</dimen>
+
+    <!--所有频道-->
+    <dimen name="allchannel_item_size">250px</dimen>
+    <dimen name="allchannel_focus_padding">50px</dimen>
+
+    <!--排行榜-->
+    <dimen name="chart_main_pleft">60px</dimen>
+    <dimen name="chart_main_pright">66.67px</dimen>
+    <dimen name="chart_tv_mtop">42px</dimen>
+    <dimen name="chart_tv_size">40px</dimen>
+    <dimen name="chart_focus_view_mleft">57.33px</dimen>
+    <dimen name="chart_focus_view_mtop">161.33px</dimen>
+    <dimen name="chart_iv_movie_mleft">6.67px</dimen>
+    <dimen name="chart_iv_width">256px</dimen>
+    <dimen name="chart_iv_height">90.67px</dimen>
+    <dimen name="chart_iv_mtop">123.33px</dimen>
+    <dimen name="chart_iv_mleft">40px</dimen>
+    <dimen name="chart_rv_width">256px</dimen>
+    <dimen name="chart_rv_mtop">183.33px</dimen>
+    <dimen name="chart_iv_arrow_width">16.67px</dimen>
+    <dimen name="chart_iv_arrow_right">52px</dimen>
+    <dimen name="chart_iv_arrow_margin">19.33px</dimen>
+    <dimen name="chart_item_main_height">90.67px</dimen>
+    <dimen name="chart_item_main_mleft">-13.33px</dimen>
+    <dimen name="chart_item_main_mtop">-22px</dimen>
+    <dimen name="chart_item_main_pleft">28px</dimen>
+    <dimen name="chart_item_tv_number_width">32px</dimen>
+    <dimen name="chart_item_tv_number_size">18.67px</dimen>
+    <dimen name="chart_item_tv_text_mleft">38.67px</dimen>
+    <dimen name="chart_item_tv_text_pright">13.33px</dimen>
+    <dimen name="chart_item_tv_text_size">17.33px</dimen>
+    <dimen name="chart_item_title_tv_mtop">8px</dimen>
+    <dimen name="chart_item_title_tv_size">21.33px</dimen>
+    <dimen name="grid_padding">10px</dimen>
+</resources>

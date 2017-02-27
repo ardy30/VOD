@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="@dimen/allchannel_item_size"
+                android:layout_height="@dimen/allchannel_item_size"
+                android:duplicateParentState="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+    <ImageView
+        android:id="@+id/allchannel_rv_iv_icon"
+        android:layout_width="@dimen/allchannel_item_size"
+        android:layout_height="@dimen/allchannel_item_size"
+        android:layout_centerInParent="true"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:scaleType="fitXY"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_content_mas_height"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/mas3"/>
+
+    <com.ppfuns.ui.view.AlwaysMarqueeTextView
+        android:id="@+id/allchannel_tv_name"
+        android:layout_width="@dimen/allchannel_item_size"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/px10"
+        android:layout_marginLeft="@dimen/px10"
+        android:layout_marginRight="@dimen/px10"
+        android:maxLines="1"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/main_content_tv_size"/>
+
+</RelativeLayout>

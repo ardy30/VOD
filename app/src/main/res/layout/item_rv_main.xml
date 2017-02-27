@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/main_content_item_rv_width"
+    android:layout_height="@dimen/main_content_item_rv_height"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <ImageView
+        android:id="@+id/main_rv_item_iv_icon"
+        android:layout_width="@dimen/main_content_item_rv_width"
+        android:layout_height="@dimen/main_content_item_rv_height"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:scaleType="fitXY"/>
+
+    <View
+        android:id="@+id/item_mas"
+        android:layout_width="@dimen/main_content_item_rv_width"
+        android:layout_height="@dimen/main_content_mas_height"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:background="@drawable/mas3"/>
+
+    <com.ppfuns.ui.view.AlwaysMarqueeTextView
+        android:id="@+id/main_rv_item_tv_title"
+        style="@style/mainContentTextStyle"
+        android:layout_width="@dimen/main_content_item_rv_text_width"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:text="@dimen/main_content_tv_size"/>
+</FrameLayout>

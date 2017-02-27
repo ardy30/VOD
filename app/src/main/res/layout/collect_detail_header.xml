@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/collect_header_layout_height"
+    android:focusable="false">
+
+    <TextView
+        android:id="@+id/channelName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/collect_detail_text_marleft"
+        android:layout_marginTop="@dimen/collect_detail_text_martop"
+        android:textStyle="bold"
+        android:text="@string/record_or_collection"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/collect_textsize" />
+
+
+    <TextView
+        android:id="@+id/albumNumbers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/channelName"
+        android:layout_marginLeft="@dimen/collect_text_marleft"
+        android:layout_marginTop="@dimen/collect_detail_text_martop2"
+        android:text="总共0条记录"
+        android:textColor="#E1E2E9"
+        android:textSize="@dimen/collect_album_textsize" />
+    <TextView
+        android:id="@+id/pageIndex2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/collect_detail_header_layout_marginBottom"
+        android:layout_marginRight="@dimen/collect_detail_header_layout_marginRight"
+        android:text="/1"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/collect_album_textsize"
+        android:alpha="0.5"/>
+
+    <TextView
+        android:id="@+id/pageIndex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/collect_text_marbuttom2"
+        android:layout_toLeftOf="@id/pageIndex2"
+        android:text="1"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/collect_channelcategoryname_textsize"
+        android:alpha="0.5"/>
+
+
+</RelativeLayout>
