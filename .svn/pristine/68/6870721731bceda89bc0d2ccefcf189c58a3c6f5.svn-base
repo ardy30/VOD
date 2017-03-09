@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/search_list_header_mbottom"
+                android:layout_marginLeft="@dimen/search_list_header_mleft"
+                android:layout_marginRight="@dimen/search_list_header_mright">
+
+    <TextView
+        android:id="@+id/search_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/search_list_header_title_mtop"
+        android:includeFontPadding="false"
+        android:focusable="false"
+        android:text="@string/search_result_title"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/search_list_header_title_textSize"/>
+
+    <TextView
+        android:id="@+id/search_tv_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:includeFontPadding="false"
+        android:layout_marginTop="@dimen/search_list_header_count_mtop"
+        android:focusable="false"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/search_list_header_count_textSize"/>
+
+
+</RelativeLayout>

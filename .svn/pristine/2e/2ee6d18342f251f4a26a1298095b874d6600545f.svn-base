@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.ppfuns.vod">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name=".BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:launchMode="singleTop"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen">
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="57c4eb4ec62dca2e7a001f1a"/>
+        <meta-data
+            android:name="com.ppfuns.ui.view.GlideConfiguration"
+            android:value="GlideModule"/>
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="com.ppfuns.vod.action.ACTION_ENTRY_VOD"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.CollectRecordActivity">
+            <intent-filter>
+                <action android:name="com.ppfuns.vod.action.ACTION_VIEW_RECORD"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.ChannelCategoryActivity">
+            <intent-filter>
+                <action android:name="com.ppfuns.vod.action.ACTION_VIEW_CATALOG"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.SubjectCategoryActivity">
+            <intent-filter>
+                <action android:name="com.ppfuns.vod.action.ACTION_VIEW_SUBJECT_CATEGORY"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.SubjectDetailsActivity">
+            <intent-filter>
+                <action android:name="com.ppfuns.vod.action.ACTION_VIEW_SUBJECT"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.AlbumActivity">
+            <intent-filter>
+                <action android:name="com.ppfuns.vod.action.ACTION_VIEW_DETAILS"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.PlayerActivity"
+            android:launchMode="singleTop"
+            android:taskAffinity=".ppfuns.player"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="com.ppfuns.vod.action.ACTION_VIEW_VOD_PLAY"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.SearchActivity"
+            android:windowSoftInputMode="adjustUnspecified">
+            <intent-filter>
+                <action android:name="com.ppfuns.vod.action.ACTION_VIEW_SEARCH"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.BackDoorActivity"/>
+        <activity
+            android:name=".activity.WebViewActivity"
+            android:launchMode="singleInstance"/>
+
+        <service android:name=".service.UploadService"/>
+
+        <receiver android:name=".receiver.VoiceReceiver">
+            <intent-filter>
+                <action android:name="com.ppfuns.vod.play"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".receiver.BootBroadcastReceiver"
+                  android:exported="true">
+            <intent-filter>
+                <action android:name="com.ppfuns.launcher.BOOT_COMPLETED"/>
+                <!--<action android:name="android.intent.action.BOOT_COMPLETED"/>-->
+            </intent-filter>
+        </receiver>
+        <!-- <receiver android:name=".receiver.PlayControlReceiver"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="com.ppfuns.vod.playcontrol"/> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+        <service android:name=".service.VoicePlayService">
+            <intent-filter>
+                <action android:name="com.ppfuns.vod.voiceplay"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name=".activity.VoicePlayListActivtiy"/>
+        <activity
+            android:name=".activity.FilmIntroducedActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:name=".activity.ARdetailActivity">
+            <intent-filter>
+                <action android:name="com.ppfuns.vod.action.ACTION_AR"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name=".activity.PayInfoActivity">
+        </activity>
+        <activity android:name=".activity.AllChannelActivity">
+            <intent-filter>
+                <action android:name="com.ppfuns.vod.action.ACTION_VIEW_AllCHANNEL"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.ChartActivity">
+            <intent-filter>
+                <action android:name="com.ppfuns.vod.action.ACTION_VIEW_CHART"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".service.ColumnService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":columnservice"
+            >
+        </service>
+    </application>
+
+</manifest>

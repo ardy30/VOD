@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        xmlns:fcf="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.6"
+                android:layout_marginTop="100px"
+                android:layout_marginLeft="100px"
+                android:focusable="false"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/subjectName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:textStyle="bold"
+                    android:text="刘德华专题"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="60px" />
+                <TextView
+                    android:id="@+id/items"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:text="总共35部影片"
+                    android:textColor="#E1E2E9"
+                    android:textSize="30px" />
+
+                <TextView
+                    android:id="@+id/subjectDes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:textStyle="bold"
+                    android:layout_marginTop="70px"
+                    android:text="明星专栏 想看就看"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="60px" />
+                <TextView
+                    android:id="@+id/subjectDes1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:text="免费大片连连看，限时免费"
+                    android:textColor="#d5d5d6"
+                    android:textSize="28px" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:layout_marginTop="70px"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/filmName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:layout_weight="1.0"
+                        android:text=""
+                        android:textColor="@color/colorWhite"
+                        android:textSize="60px"
+                        android:singleLine="true"/>
+                    <TextView
+                        android:id="@+id/score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:layout_marginRight="30dp"
+                        android:layout_weight="0.0"
+                        android:text=""
+                        android:textColor="@color/colorWhite"
+                        android:textSize="36px" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="10px"
+                    android:background="@drawable/dividers"/>
+
+                <TextView
+                    android:id="@+id/filmDes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.5"
+                    android:focusable="false"
+                    android:layout_marginTop="15px"
+                    android:layout_marginBottom="100px"
+                    android:text="导演: 杜琪峰\n演员: 刘德华 郑秀文 郭涛 高圆圆\n类型: 爱情 动作 犯罪 惊悚\n简介: 曾是“O记”杰出探员的庄士敦，因某起案件双目失明，而眼前一片漆黑的他仍乐此不疲捡起沉疴多年且悬而未决的无头之案调查，在给受害者讨回公道的同时赢得丰厚的悬红报酬。他判案手法独特，擅长在头脑中原原本本还原当事人所处的场景和持有的心情来追查线索。在追查“通渠水伤人事件”疑犯的过程中，庄偶然结识当年“O记”好哥们司徒法宝的下属何家彤。何虽然办案经验不足，但身手了得，关键时刻救下了正处在危急关头的庄。她对这位名震一时的“破案之神”佩服得五体投地，因此请求庄Sir接手帮忙调查许多年前失踪的好友小敏的下落。"
+                    android:textColor="#a2aab0"
+                    android:textSize="26px"
+                    android:maxLines="9"/>
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_weight="1">
+
+            <com.ppfuns.ui.view.FancyCoverFlow
+                android:id="@+id/fancyCoverFlow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spacing="-175dp"
+                fcf:maxRotation="0"
+                fcf:scaleDownGravity="0.8"
+                fcf:unselectedAlpha="0.5"
+                fcf:unselectedSaturation="1"
+                fcf:unselectedScale="0.6"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <com.ppfuns.ui.view.MainUpView
+        android:id="@+id/mainUpView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
+

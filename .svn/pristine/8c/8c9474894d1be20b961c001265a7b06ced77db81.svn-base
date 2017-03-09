@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@mipmap/cover">
+
+    <RelativeLayout
+        android:id="@+id/rl_main"
+        android:layout_width="@dimen/tipsdialog_main_width"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/box">
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="@dimen/free_see_img_width"
+            android:layout_height="@dimen/free_see_img_height"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/free_see_img_mleft"
+            android:background="@drawable/alarm_clock"/>
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20px"
+            android:layout_toRightOf="@id/iv_icon"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingTop="@dimen/free_see_msg_ptop"
+            android:text="@string/free_see_msg"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/tipsdialog_content_size"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_message"
+            android:layout_centerHorizontal="true"
+            android:layout_toRightOf="@id/iv_icon"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_confirm"
+                android:layout_width="@dimen/tipsdialog_btn_width"
+                android:layout_height="@dimen/tipsdialog_btn_height"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/album_btn_bg"
+                android:gravity="center"
+                android:text="@string/tips_confirm"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/tipsdialog_content_size"/>
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="@dimen/tipsdialog_btn_width"
+                android:layout_height="@dimen/tipsdialog_btn_height"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/album_btn_bg"
+                android:gravity="center"
+                android:text="@string/tips_cancel"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/tipsdialog_content_size"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

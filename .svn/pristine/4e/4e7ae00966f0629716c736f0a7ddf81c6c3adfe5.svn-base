@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="685px"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100px"
+            android:layout_marginTop="100px"
+            android:focusable="false"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/subjectName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:text=""
+                android:textColor="@color/colorWhite"
+                android:textSize="60px"
+                android:textStyle="bold"
+                android:maxLength="13"/>
+
+            <TextView
+                android:id="@+id/items"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:text=""
+                android:textColor="#E1E2E9"
+                android:textSize="30px"/>
+
+            <TextView
+                android:id="@+id/subjectDes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70px"
+                android:focusable="false"
+                android:text=""
+                android:textColor="@color/colorWhite"
+                android:textSize="60px"
+                android:textStyle="bold"
+                android:maxLength="13"/>
+
+            <TextView
+                android:id="@+id/subjectDes1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:text=""
+                android:textColor="#d5d5d6"
+                android:textSize="28px"
+                android:maxLength="26"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70px"
+                android:focusable="false"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/filmName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:focusable="false"
+                    android:maxLength="8"
+                    android:text=""
+                    android:textColor="@color/colorWhite"
+                    android:textSize="60px" />
+
+                <TextView
+                    android:id="@+id/score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:layout_weight="0.0"
+                    android:focusable="false"
+                    android:text=""
+                    android:textColor="@color/colorWhite"
+                    android:textSize="36px" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="10px"
+                android:background="@drawable/dividers" />
+
+            <TextView
+                android:id="@+id/filmDes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="100px"
+                android:layout_marginTop="15px"
+                android:focusable="false"
+                android:lineSpacingMultiplier="1.5"
+                android:maxLines="9"
+                android:textColor="#a2aab0"
+                android:textSize="26px" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="3000px"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15px"
+            >
+
+            <include layout="@layout/gallery_img2"
+                />
+            <ImageView
+                android:layout_width="90px"
+                android:layout_height="90px"
+                android:layout_marginTop="143px"
+                android:layout_marginLeft="3px"
+                android:id="@+id/img_tip"
+                android:src="@drawable/zhuanti"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/faus"
+        android:layout_width="680px"
+        android:layout_height="884px"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="757px"
+        android:focusable="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/main_focus_2" />
+</RelativeLayout>
+

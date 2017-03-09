@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/chart_item_main_height"
+                android:layout_marginBottom="@dimen/chart_item_main_mtop"
+                android:layout_marginLeft="@dimen/chart_item_main_mleft"
+                android:layout_marginRight="@dimen/chart_item_main_mleft"
+                android:layout_marginTop="@dimen/chart_item_main_mtop"
+                android:background="@drawable/item_chart_normal"
+                android:focusable="true"
+                android:paddingLeft="@dimen/chart_item_main_pleft"
+                android:paddingRight="@dimen/chart_item_main_pleft">
+
+    <TextView
+        android:id="@+id/btn_number"
+        android:layout_width="@dimen/chart_item_tv_number_width"
+        android:layout_height="@dimen/chart_item_tv_number_width"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:focusable="false"
+        android:gravity="center"
+        android:textSize="@dimen/chart_item_tv_number_size"/>
+
+    <com.ppfuns.ui.view.AlwaysMarqueeTextView
+        android:id="@+id/tv_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBaseline="@id/btn_number"
+        android:layout_marginLeft="@dimen/chart_item_tv_text_mleft"
+        android:ellipsize="marquee"
+        android:focusable="false"
+        android:paddingRight="@dimen/chart_item_tv_text_pright"
+        android:singleLine="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/chart_item_tv_text_size"/>
+
+</RelativeLayout>

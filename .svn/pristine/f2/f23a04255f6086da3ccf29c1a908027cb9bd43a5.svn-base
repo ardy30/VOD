@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="afterDescendants"
+    android:focusable="false">
+
+    <RelativeLayout
+        android:id="@+id/rl_rfcontrol"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/player_ctrl_height"
+        android:layout_alignParentBottom="true"
+        android:background="@mipmap/bg_ctrler_mask"
+        android:descendantFocusability="afterDescendants"
+        android:focusable="false"
+        android:paddingLeft="@dimen/player_ctrl_padding_left"
+        android:paddingRight="@dimen/player_ctrl_padding_right">
+
+
+        <ImageView
+            android:id="@+id/ib_pause_play"
+            android:layout_width="@dimen/player_btn_pause_play_width"
+            android:layout_height="@dimen/player_btn_pause_play_hight"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="78px"
+            android:background="@drawable/abc_item_background_holo_light"
+            android:focusable="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_play_circle_outline" />
+
+        <com.ppfuns.ui.view.player.PopupSeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="81px"
+            android:layout_toEndOf="@+id/ib_pause_play"
+            android:layout_toRightOf="@+id/ib_pause_play"
+            android:focusable="false"
+            android:maxHeight="@dimen/player_seekbar_max_hight"
+            android:paddingLeft="@dimen/player_seekbar_padding_left"
+            android:paddingRight="@dimen/player_seekbar_padding_right"
+            android:thumbOffset="0px"
+            android:progressDrawable="@drawable/bg_seek_bar"
+            android:thumb="@drawable/ic_seekbar_thumb"
+            app:popupStyle="follow" />
+
+        <TextView
+
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/seekBar"
+            android:layout_alignRight="@+id/seekBar"
+
+            android:focusable="false"
+            android:textColor="#FFF"
+
+            android:textSize="@dimen/player_time_text_size"
+            tools:text="12:12/24:24" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/seekBar"
+            android:layout_marginLeft="@dimen/player_title_margin_left"
+            android:layout_toEndOf="@+id/ib_pause_play"
+            android:layout_toLeftOf="@+id/tv_time"
+            android:layout_toRightOf="@+id/ib_pause_play"
+            android:layout_toStartOf="@+id/tv_time">
+
+            <TextView
+                android:id="@+id/tv_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:singleLine="true"
+                android:textSize="@dimen/player_title_textsize"
+                android:textColor="#FFF"
+                tools:text="keke" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tv_info"
+                android:textSize="@dimen/player_info_textsize"
+                android:textColor="#FFF"
+                tools:text="keke" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--<android.support.v7.widget.RecyclerView-->
+    <!--android:id="@+id/rv_drama"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:focusable="false" />-->
+</RelativeLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone"
+    android:focusable="false"
+    tools:context="com.ppfuns.vod.activity.ChartActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/chart_main_pleft"
+        android:layout_marginTop="@dimen/chart_tv_mtop"
+        android:focusable="false"
+        android:text="@string/chart_title"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/chart_tv_size"/>
+
+    <ImageView
+        android:id="@+id/iv_left"
+        android:layout_width="@dimen/chart_iv_arrow_width"
+        android:layout_height="@dimen/chart_iv_arrow_right"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/chart_iv_arrow_margin"
+        android:background="@drawable/chart_arrow_left"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/iv_right"
+        android:layout_width="@dimen/chart_iv_arrow_width"
+        android:layout_height="@dimen/chart_iv_arrow_right"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/chart_iv_arrow_margin"
+        android:background="@drawable/chart_arrow_right"
+        android:visibility="gone"/>
+
+    <com.ppfuns.ui.view.ChartHorizontalScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/chart_main_pleft"
+        android:layout_marginRight="@dimen/chart_main_pright"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:focusable="false"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:id="@+id/rl_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:focusable="false">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_channel"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/chart_iv_height"
+                android:layout_marginLeft="@dimen/chart_iv_movie_mleft"
+                android:layout_marginTop="@dimen/chart_iv_mtop"
+                android:focusable="false">
+
+            </android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
+    </com.ppfuns.ui.view.ChartHorizontalScrollView>
+
+    <com.ppfuns.ui.view.MainUpView
+        android:id="@+id/main_up_view"
+        android:layout_width="@dimen/chart_iv_width"
+        android:layout_height="@dimen/chart_item_main_height"
+        android:focusable="false">
+
+    </com.ppfuns.ui.view.MainUpView>
+
+</RelativeLayout>

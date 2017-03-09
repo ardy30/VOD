@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/subject_category_layout_headerheight"
+        android:focusable="false">
+
+        <TextView
+            android:id="@+id/channelName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/text_marleft"
+            android:layout_marginTop="@dimen/text_martop"
+            android:text="@string/subject"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/channelname_textsize"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/albumNumbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/text_marleft2"
+            android:layout_marginTop="@dimen/text_martop2"
+            android:layout_toRightOf="@id/channelName"
+            android:text=""
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/channelcategoryname_textsize" />
+
+
+        <TextView
+            android:id="@+id/pageIndex2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/pageIndex2_marginBottom"
+            android:layout_marginRight="@dimen/pageIndex2_marginRight"
+            android:alpha="0.5"
+            android:text=""
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/album_textsize" />
+
+        <TextView
+            android:id="@+id/pageIndex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/text_marright"
+            android:layout_toLeftOf="@id/pageIndex2"
+            android:alpha="0.5"
+            android:text=""
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/channelcategoryname_textsize" />
+
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/go_left"
+        android:layout_width="@dimen/go_left_width"
+        android:layout_height="@dimen/go_left_height"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/go_left_marginLeft"
+        android:focusable="true"
+        android:src="@drawable/arrow_l" />
+
+    <ImageView
+        android:id="@+id/go_right"
+        android:layout_width="@dimen/go_left_width"
+        android:layout_height="@dimen/go_left_height"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/go_left_marginRight"
+        android:focusable="true"
+        android:src="@drawable/arrow_r" />
+
+
+    <com.ppfuns.ui.view.TwoWayGridView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/gridview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/header_layout"
+        android:layout_marginBottom="@dimen/twoWayGridView_marginBottom"
+        android:layout_marginLeft="@dimen/twoWayGridView_marginLeft"
+        android:layout_marginRight="@dimen/twoWayGridView_marginLeft"
+        android:layout_toLeftOf="@id/go_right"
+        android:layout_toRightOf="@id/go_left"
+        android:background="@android:color/transparent"
+        android:scrollbars="none"
+        app:cacheColorHint="@android:color/transparent"
+        app:columnWidth="@dimen/twoWayGridView_columnWidth"
+        app:gravity="center"
+        app:horizontalSpacing="@dimen/twoWayGridView_horizontalSpacing"
+        app:listSelector="@android:color/transparent"
+        app:numColumns="3"
+        app:numRows="2"
+        app:rowHeight="@dimen/twoWayGridView_rowHeight"
+        app:scrollDirectionLandscape="horizontal"
+        app:stretchMode="spacingWidthUniform"
+        app:verticalSpacing="@dimen/twoWayGridView_verticalSpacing" />
+    <!-- 最顶层边框 -->
+
+    <com.ppfuns.ui.view.MainUpView
+        android:id="@+id/mainUpView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+</RelativeLayout>

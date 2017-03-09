@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="50dp"
+    tools:context="com.ppfuns.vod.activity.BackDoorActivity">
+
+    <LinearLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_formal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/menu_btn_bg"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/menu_btn_formal"
+            android:textSize="@dimen/album_btn_size" />
+
+        <Button
+            android:id="@+id/btn_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/menu_btn_bg"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/menu_btn_test"
+            android:textSize="@dimen/album_btn_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_top"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_domain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_txt_domain"
+            android:textSize="@dimen/menu_tv_size" />
+
+        <TextView
+            android:id="@+id/tv_domain_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_txt_domain_user"
+            android:textSize="@dimen/menu_tv_size" />
+
+        <TextView
+            android:id="@+id/tv_version_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_txt_version_name"
+            android:textSize="@dimen/menu_tv_size" />
+
+        <TextView
+            android:id="@+id/tv_version_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_txt_version_code"
+            android:textSize="@dimen/menu_tv_size" />
+
+        <TextView
+            android:id="@+id/tv_svn_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_txt_svn_version"
+            android:textSize="@dimen/menu_tv_size" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_column"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:inputType="number"
+                android:hint="@string/menu_txt_column"
+                android:textSize="@dimen/menu_tv_size" />
+
+            <Button
+                android:id="@+id/btn_column_commit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_btn_commit"
+                android:textSize="@dimen/album_btn_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

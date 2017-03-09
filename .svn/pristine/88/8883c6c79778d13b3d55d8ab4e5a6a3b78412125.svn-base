@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/search_center"
+        android:layout_width="@dimen/search_list_width"
+        android:layout_height="match_parent"
+        android:background="@color/colorlightGray">
+
+        <!--头部分-->
+        <include
+            android:id="@+id/search_center_header"
+            layout="@layout/search_center_header"/>
+
+        <!--ListView部分-->
+        <com.ppfuns.ui.view.recycle.RecyclerViewTV
+            android:id="@+id/search_center_rv_data"
+            android:layout_width="@dimen/search_list_center_width"
+            android:layout_height="@dimen/search_list_center_height"
+            android:layout_below="@+id/search_center_header"
+            android:layout_marginLeft="@dimen/search_list_center_mleft"
+            android:layout_marginRight="@dimen/search_list_center_mright"
+            android:focusable="false"/>
+
+
+        <View
+            android:id="@+id/search_line2"
+            android:layout_width="@dimen/search_line"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/line_s"/>
+
+
+    </RelativeLayout>
+
+
+    <com.ppfuns.ui.view.recycle.RecyclerViewTV
+        android:id="@+id/search_poster_rv_data"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/search_gird_poster_mtop"
+        android:layout_marginLeft="@dimen/search_gird_poster_mleft"
+        android:layout_marginRight="@dimen/search_gird_poster_mright"
+        android:layout_toRightOf="@+id/search_center"/>
+
+
+</RelativeLayout>

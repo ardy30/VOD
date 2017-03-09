@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_img_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:antialias="true">
+
+    <com.ppfuns.ui.view.ShapeImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/item_img"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        app:border_color="@color/colorWhite"
+        app:border_size="0dp"
+        app:shape="rect"/>
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:scaleType="centerCrop"
+        android:id="@+id/img_fous"/>
+    <ImageView
+        android:layout_width="90px"
+        android:layout_height="90px"
+        android:id="@+id/img_tip"
+        android:src="@drawable/zhuanti"
+        android:visibility="gone"/>
+
+
+</RelativeLayout>

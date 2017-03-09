@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/header_layout_height"
+    android:focusable="false">
+
+    <TextView
+        android:id="@+id/channelName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/text_marleft"
+        android:layout_marginTop="@dimen/text_martop"
+        android:textStyle="bold"
+        android:text=""
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/channelname_textsize" />
+
+    <TextView
+        android:id="@+id/channelCategoryName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/text_marleft2"
+        android:layout_marginTop="@dimen/text_martop2"
+        android:layout_toRightOf="@id/channelName"
+        android:text=""
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/channelcategoryname_textsize" />
+
+    <TextView
+        android:id="@+id/albumNumbers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/channelName"
+        android:layout_marginLeft="@dimen/text_marleft3"
+        android:layout_marginTop="@dimen/text_martop3"
+        android:text=""
+        android:textColor="#E1E2E9"
+        android:textSize="@dimen/album_textsize" />
+
+    <TextView
+        android:id="@+id/pageIndex2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/text_marbuttom"
+        android:layout_marginRight="@dimen/text_marright"
+        android:text=""
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/album_textsize"
+        android:alpha="0.5"/>
+
+    <TextView
+        android:id="@+id/pageIndex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/pageIndex2"
+        android:layout_alignBaseline="@id/pageIndex2"
+        android:layout_toLeftOf="@id/pageIndex2"
+        android:text=""
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/channelcategoryname_textsize"
+        android:alpha="0.5"/>
+
+    <Button
+        android:id="@+id/btn_search"
+        android:layout_width="@dimen/btn_search_width"
+        android:layout_height="@dimen/btn_search_height"
+        android:layout_toLeftOf="@id/pageIndex"
+        android:layout_alignBaseline="@id/pageIndex"
+        android:layout_alignBottom="@id/pageIndex"
+        android:focusable="false"
+        android:background="@drawable/btn_search_selctor"
+        android:layout_marginRight="20px"/>
+
+</RelativeLayout>

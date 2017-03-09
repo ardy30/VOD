@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ppfuns.ui.view.layout.RelativeLayoutGallery
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/imgs_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:focusable="false">
+    <ImageView
+        android:id="@+id/img5"
+        android:layout_width="414px"
+        android:layout_height="552px"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="725px"
+        android:scaleType="fitXY"/>
+    <ImageView
+        android:id="@+id/img4"
+        android:layout_width="414px"
+        android:layout_height="552px"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="725px"
+        android:scaleType="fitXY"/>
+
+    <ImageView
+        android:id="@+id/img3"
+        android:layout_width="474px"
+        android:layout_height="632px"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="535px"
+        android:scaleType="fitXY"/>
+
+    <ImageView
+        android:id="@+id/img2"
+        android:layout_width="516px"
+        android:layout_height="689px"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="303px"
+        android:scaleType="fitXY"/>
+
+    <ImageView
+        android:id="@+id/img1"
+        android:layout_width="585px"
+        android:layout_height="780px"
+        android:layout_centerVertical="true"
+        android:scaleType="fitXY"/>
+
+</com.ppfuns.ui.view.layout.RelativeLayoutGallery>
